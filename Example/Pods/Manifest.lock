@@ -1,0 +1,14 @@
+PODS:
+  - DraugiemSDK (0.1.0)
+
+DEPENDENCIES:
+  - DraugiemSDK (from `../`)
+
+EXTERNAL SOURCES:
+  DraugiemSDK:
+    :path: ../
+
+SPEC CHECKSUMS:
+  DraugiemSDK: 3e8c075d5f80f5880335e4f2c539c3ffbcb659bf
+
+COCOAPODS: 0.36.3
