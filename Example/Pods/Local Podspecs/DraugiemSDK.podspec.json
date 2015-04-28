@@ -1,15 +1,15 @@
 {
   "name": "DraugiemSDK",
   "version": "0.1.0",
-  "summary": "A short description of DraugiemSDK.",
-  "description": "                       An optional longer description of DraugiemSDK\n\n                       * Markdown format.\n                       * Don't worry about the indent, we strip it!\n",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/DraugiemSDK",
-  "license": "MIT",
+  "summary": "Official Draugiem SDK for iOS.",
+  "description": "The Draugiem SDK for iOS enables you to use Draugiem platform fetures, such as Draugiem passport login and payments.",
+  "homepage": "https://github.com/aigarssilavs/DraugiemSDK",
+  "license": "WTFPL",
   "authors": {
     "Aigars Silavs": "aigars.silavs@gmail.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/DraugiemSDK.git",
+    "git": "https://github.com/aigarssilavs/DraugiemSDK.git",
     "tag": "0.1.0"
   },
   "platforms": {
@@ -21,5 +21,7 @@
     "DraugiemSDK": [
       "Pod/Assets/*.png"
     ]
-  }
+  },
+  "public_header_files": "Pod/Classes/Public/**/*.h",
+  "frameworks": "UIKit"
 }

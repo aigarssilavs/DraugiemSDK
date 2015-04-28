@@ -16,7 +16,6 @@ Pod::Spec.new do |s|
   s.license          = 'WTFPL'
   s.author           = { "Aigars Silavs" => "aigars.silavs@gmail.com" }
   s.source           = { :git => "https://github.com/aigarssilavs/DraugiemSDK.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
@@ -26,6 +25,6 @@ Pod::Spec.new do |s|
     'DraugiemSDK' => ['Pod/Assets/*.png']
   }
 
-  s.public_header_files = 'Pod/Classes/**/*.h'
+  s.public_header_files = 'Pod/Classes/Public/**/*.h'
   s.frameworks = 'UIKit'
 end

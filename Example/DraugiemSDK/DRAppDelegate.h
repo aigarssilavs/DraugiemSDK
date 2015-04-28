@@ -1,9 +1,10 @@
 //
-//  DRAppDelegate.h
-//  DraugiemSDK
+//  Created by Aigars Silavs
+//  Copyright © 2015 Draugiem
 //
-//  Created by CocoaPods on 04/28/2015.
-//  Copyright (c) 2014 Aigars Silavs. All rights reserved.
+//  This work is free. You can redistribute it and/or modify it under the
+//  terms of the Do What The Fuck You Want To Public License, Version 2,
+//  as published by Sam Hocevar. See http://www.wtfpl.net/ for more details.
 //
 
 #import <UIKit/UIKit.h>

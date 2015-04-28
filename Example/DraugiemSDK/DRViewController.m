@@ -1,29 +1,56 @@
 //
-//  DRViewController.m
-//  DraugiemSDK
+//  Created by Aigars Silavs
+//  Copyright © 2015 Draugiem
 //
-//  Created by Aigars Silavs on 04/28/2015.
-//  Copyright (c) 2014 Aigars Silavs. All rights reserved.
+//  This work is free. You can redistribute it and/or modify it under the
+//  terms of the Do What The Fuck You Want To Public License, Version 2,
+//  as published by Sam Hocevar. See http://www.wtfpl.net/ for more details.
 //
 
 #import "DRViewController.h"
+#import "DraugiemSDK.h"
 
 @interface DRViewController ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @end
 
 @implementation DRViewController
 
-- (void)viewDidLoad
+- (IBAction)logInButtonTapped:(UIButton *)sender
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    [Draugiem logInWithCompletion:^(NSString *apiKey, NSError *error) {
+        if (apiKey) {
+            self.textView.text = [NSString stringWithFormat:@"API key: %@\n\nClient data may be requested now.", apiKey];
+        } else {
+            self.textView.text = [NSString stringWithFormat:@"%@", error];
+        }
+    }];
 }
 
-- (void)didReceiveMemoryWarning
+- (IBAction)logOutButtonTapped:(UIButton *)sender
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [Draugiem logOut];
+    self.imageView.image = nil;
+    self.textView.text = nil;
+}
+
+- (IBAction)getClientButtonTapped:(UIButton *)sender
+{
+    [Draugiem clientWithCompletion:^(DRUser *client, NSError *error) {
+        if (client) {
+            self.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:client.imageLargeURL]];
+            self.textView.text = [client.title stringByAppendingFormat:@".%@ %@.",
+                                  client.age != 0 ? [NSString stringWithFormat:@" %@ year old", @(client.age)] : @"",
+                                  client.sex == DRUserSexFemale ? @"female" :
+                                  client.sex == DRUserSexMale ? @"male" : @"individual of unkonwn gender"];
+        } else {
+            self.imageView.image = nil;
+            self.textView.text = [NSString stringWithFormat:@"%@", error];
+        }
+    }];
 }
 
 @end

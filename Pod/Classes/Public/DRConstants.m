@@ -7,8 +7,8 @@
 //  as published by Sam Hocevar. See http://www.wtfpl.net/ for more details.
 //
 
-#import <UIKit/UIKit.h>
+#import "DRConstants.h"
 
-@interface DRViewController : UIViewController
+@implementation DRConstants
 
 @end

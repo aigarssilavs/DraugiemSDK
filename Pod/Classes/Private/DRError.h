@@ -7,8 +7,12 @@
 //  as published by Sam Hocevar. See http://www.wtfpl.net/ for more details.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-@interface DRViewController : UIViewController
+@interface DRError : NSObject
+
++ (NSError *)errorWithCode:(NSInteger)code;
++ (NSError *)errorWithCode:(NSInteger)code message:(NSString *)message;
++ (NSError *)errorWithCode:(NSInteger)code message:(NSString *)message domain:(NSString *)domain;
 
 @end

@@ -7,206 +7,357 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		296A33BF3EF14D66FC288D32 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E00B9C022E064969CA07D9E /* Foundation.framework */; };
-		34A8EBAE60CA7EC89EB4D1C8 /* Pods-Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BF444762EADAE4A598E7FCC0 /* Pods-Tests-dummy.m */; };
-		3A8C84FC551EDB54AEBE0423 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E00B9C022E064969CA07D9E /* Foundation.framework */; };
-		E92CFDBB14EC9535E807963A /* Pods-DraugiemSDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DCBD8FC151A8258FCFA6FC8 /* Pods-DraugiemSDK-dummy.m */; };
+		00769212E20EBB94E40BFCA6 /* DRConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 524A83093FC63F1E90697282 /* DRConstants.m */; };
+		0436E69922B35E5F67A44CFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA4E43F340A2CEEA3A3937B8 /* Foundation.framework */; };
+		0ECB627E7948B0DE2E633CEA /* DraugiemSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = A5A99F40BBC0D585FC427F9B /* DraugiemSDK.h */; };
+		1A7DA0C87CBCD5608FE346B1 /* DRConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 524A83093FC63F1E90697282 /* DRConstants.m */; };
+		1AB254AB3E8B60F9EA5497E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA4E43F340A2CEEA3A3937B8 /* Foundation.framework */; };
+		1D8B0AF00B45BF09E4356217 /* DRConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 23E9B64A1A699BA8C2D5BCF7 /* DRConstants.h */; };
+		29363FC8BA8DA40A4846EDD7 /* DRHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BC6FD834AB8C281D639120 /* DRHelper.m */; };
+		4D0D3065D642B0AD8344A93A /* Pods-DraugiemSDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 445F0F2FC9283344024F7D2D /* Pods-DraugiemSDK-dummy.m */; };
+		65BA5797E77D23EDF26A6EA4 /* DraugiemSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7A21203E0D206275540DD2 /* DraugiemSDK.m */; };
+		6912E24A205F216740A29A15 /* DRConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 23E9B64A1A699BA8C2D5BCF7 /* DRConstants.h */; };
+		6C0C91F3ACC5CAAD0D933FA2 /* DraugiemSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7A21203E0D206275540DD2 /* DraugiemSDK.m */; };
+		6CECC76D72DCD80F4D04D255 /* DraugiemSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = A5A99F40BBC0D585FC427F9B /* DraugiemSDK.h */; };
+		6FE09D33E0C0FE32DE5B8ED1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA4E43F340A2CEEA3A3937B8 /* Foundation.framework */; };
+		70894F2535BDD46417136B4A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5901A32754A1E16365AFD191 /* UIKit.framework */; };
+		744AC40BD42D5316FA2A9486 /* DRUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 61664A01DA4D5695626C0A9F /* DRUser.m */; };
+		76503CB992BFE0088DDA8A9C /* Pods-Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DB548FB34DF33A9FCDAF32D9 /* Pods-Tests-dummy.m */; };
+		78B1FBE2DCDF8631A67CA24A /* Pods-Tests-DraugiemSDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D39445C54B23E6B432C81C4 /* Pods-Tests-DraugiemSDK-dummy.m */; };
+		9094653B7B69FB9AB135DF11 /* Pods-DraugiemSDK-DraugiemSDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 30915AA1C3CA638D39CC1FE4 /* Pods-DraugiemSDK-DraugiemSDK-dummy.m */; };
+		91FEEC2DD48BBFEACBDEC4DB /* DRError.m in Sources */ = {isa = PBXBuildFile; fileRef = C70B0451DB09F8BD030D7FCF /* DRError.m */; };
+		982D2C900DE8FEFA9014DD42 /* DRHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AA01DD4EB1480FE872305514 /* DRHelper.h */; };
+		A0486A525F5F1FCADF1A7DFE /* DRHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AA01DD4EB1480FE872305514 /* DRHelper.h */; };
+		A7E1D4D9EE288DA86CE52A38 /* DRError.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C63AA6DBEC8586697AF1CC8 /* DRError.h */; };
+		B1EF6E924934F7AD6A38F68F /* DRError.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C63AA6DBEC8586697AF1CC8 /* DRError.h */; };
+		B7E8CFC44ED790DD262675EB /* DRError.m in Sources */ = {isa = PBXBuildFile; fileRef = C70B0451DB09F8BD030D7FCF /* DRError.m */; };
+		BB476E213D96488D1DE62D92 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA4E43F340A2CEEA3A3937B8 /* Foundation.framework */; };
+		CFB8C9EE6E70A69F172EC6E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5901A32754A1E16365AFD191 /* UIKit.framework */; };
+		DFF6404D203F4B5A227E3EDA /* DRUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 61664A01DA4D5695626C0A9F /* DRUser.m */; };
+		EBE2AD0F17B1076C7D4B85B5 /* DRUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 06A8558218719AA268EB152B /* DRUser.h */; };
+		F0967BEF9E38F9499AAAFC83 /* DRHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BC6FD834AB8C281D639120 /* DRHelper.m */; };
+		F29D013E46D16550449E966F /* DRUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 06A8558218719AA268EB152B /* DRUser.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8A15ABE1646145AB49BF1524 /* PBXContainerItemProxy */ = {
+		06453422FCCE1BDA541F44AF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B501DDE7740A99B0FA80D575 /* Project object */;
+			containerPortal = D79BC59FE3E0D0FC1D512518 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8A32DF84319B08B1A38F242F;
-			remoteInfo = "Pods-Tests-DraugiemSDK-DraugiemSDK";
-		};
-		AAB2548F439F878F284D1E14 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B501DDE7740A99B0FA80D575 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 374F6877A965B3DDDD254276;
+			remoteGlobalIDString = 09B3F59962C3558C1DEA9C2D;
 			remoteInfo = "Pods-DraugiemSDK-DraugiemSDK-DraugiemSDK";
+		};
+		A6454DAE665C7D80D4DD95FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D79BC59FE3E0D0FC1D512518 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5145D9FAE862AF571FC8E75A;
+			remoteInfo = "Pods-Tests-DraugiemSDK";
+		};
+		C89C71B2271294BCA87869C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D79BC59FE3E0D0FC1D512518 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7C23D237134595BBB418891F;
+			remoteInfo = "Pods-DraugiemSDK-DraugiemSDK";
+		};
+		FBB3055FC5E225A00079ED4D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D79BC59FE3E0D0FC1D512518 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC684C5A0D9D6439524BF260;
+			remoteInfo = "Pods-Tests-DraugiemSDK-DraugiemSDK";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01D27132441CE1619495E518 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		041C50F0541D8011A111BAC1 /* Pods-DraugiemSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DraugiemSDK.debug.xcconfig"; sourceTree = "<group>"; };
-		079FD50124CFBA6232D64BF8 /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
-		07C0C68A299608252A51ACBD /* DraugiemSDK.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DraugiemSDK.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		0A44748C4BDFE3AC42003DC1 /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1CEF2CB1FA6690BAD4A19AAC /* Pods-Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tests-resources.sh"; sourceTree = "<group>"; };
-		2EBC2C80A1FAA77EA0D8F45A /* Pods-DraugiemSDK-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DraugiemSDK-environment.h"; sourceTree = "<group>"; };
-		384D42E14B83CA7CA4B24CD7 /* Pods-DraugiemSDK-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DraugiemSDK-resources.sh"; sourceTree = "<group>"; };
-		4AA34E9FF3168E62FE3AAF7F /* DraugiemSDK.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DraugiemSDK.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		4E00B9C022E064969CA07D9E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		6E5AD5BA98F400DA861CBE73 /* Pods-Tests-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Tests-environment.h"; sourceTree = "<group>"; };
-		97A7804440E71271D71582B2 /* libPods-DraugiemSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DraugiemSDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9DCBD8FC151A8258FCFA6FC8 /* Pods-DraugiemSDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DraugiemSDK-dummy.m"; sourceTree = "<group>"; };
-		AF184CD34A19DB34F8BA1EEF /* Pods-DraugiemSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DraugiemSDK.release.xcconfig"; sourceTree = "<group>"; };
-		BF444762EADAE4A598E7FCC0 /* Pods-Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Tests-dummy.m"; sourceTree = "<group>"; };
-		D1742B36D1328A72327ED0CC /* Pods-DraugiemSDK-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DraugiemSDK-acknowledgements.markdown"; sourceTree = "<group>"; };
-		DD1A75BF40C8A4123BF0EDFD /* Pods-Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		DEEBE05CBFF73464863939AC /* Pods-DraugiemSDK-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DraugiemSDK-acknowledgements.plist"; sourceTree = "<group>"; };
-		E51C8F3350CE5972968C397E /* Pods-Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		EF40923D844A1186EA9E579B /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		013B03807140A39F5EC0FDC6 /* Pods-DraugiemSDK-DraugiemSDK-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DraugiemSDK-DraugiemSDK-Private.xcconfig"; sourceTree = "<group>"; };
+		01BAC67D617A055F57CCFE9E /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		06A8558218719AA268EB152B /* DRUser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DRUser.h; sourceTree = "<group>"; };
+		201612A68728610E357185FB /* Pods-DraugiemSDK-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DraugiemSDK-environment.h"; sourceTree = "<group>"; };
+		21FB46AD27B367927BBDABDB /* Pods-Tests-DraugiemSDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-Tests-DraugiemSDK-prefix.pch"; path = "../Pods-Tests-DraugiemSDK/Pods-Tests-DraugiemSDK-prefix.pch"; sourceTree = "<group>"; };
+		23E9B64A1A699BA8C2D5BCF7 /* DRConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DRConstants.h; sourceTree = "<group>"; };
+		2C6D8CB5EE21F61433194176 /* Pods-DraugiemSDK-DraugiemSDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DraugiemSDK-DraugiemSDK.xcconfig"; sourceTree = "<group>"; };
+		2CCB7881B5416C229340B705 /* Pods-Tests-DraugiemSDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests-DraugiemSDK.xcconfig"; path = "../Pods-Tests-DraugiemSDK/Pods-Tests-DraugiemSDK.xcconfig"; sourceTree = "<group>"; };
+		2E7A21203E0D206275540DD2 /* DraugiemSDK.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DraugiemSDK.m; sourceTree = "<group>"; };
+		30915AA1C3CA638D39CC1FE4 /* Pods-DraugiemSDK-DraugiemSDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DraugiemSDK-DraugiemSDK-dummy.m"; sourceTree = "<group>"; };
+		445F0F2FC9283344024F7D2D /* Pods-DraugiemSDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DraugiemSDK-dummy.m"; sourceTree = "<group>"; };
+		44906277F8477C577A73E6B1 /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
+		4570DFA387785E7386B69B0C /* Pods-DraugiemSDK-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DraugiemSDK-acknowledgements.plist"; sourceTree = "<group>"; };
+		524A83093FC63F1E90697282 /* DRConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DRConstants.m; sourceTree = "<group>"; };
+		5901A32754A1E16365AFD191 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		5DCEAEE3E550835038066B3B /* Pods-DraugiemSDK-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DraugiemSDK-resources.sh"; sourceTree = "<group>"; };
+		5E62C37635E3CF1A6B562E24 /* libPods-Tests-DraugiemSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests-DraugiemSDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		61664A01DA4D5695626C0A9F /* DRUser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DRUser.m; sourceTree = "<group>"; };
+		63FEAAD0BAB9AE3B73B500E0 /* Pods-DraugiemSDK-DraugiemSDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DraugiemSDK-DraugiemSDK-prefix.pch"; sourceTree = "<group>"; };
+		6C63AA6DBEC8586697AF1CC8 /* DRError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DRError.h; sourceTree = "<group>"; };
+		76FF5D00D6CC32FD27DA488C /* Pods-Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8A2CEF8F346F5706DEB69EB5 /* Pods-DraugiemSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DraugiemSDK.release.xcconfig"; sourceTree = "<group>"; };
+		9BB864877FC9766B332A8129 /* Pods-Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		9D39445C54B23E6B432C81C4 /* Pods-Tests-DraugiemSDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-Tests-DraugiemSDK-dummy.m"; path = "../Pods-Tests-DraugiemSDK/Pods-Tests-DraugiemSDK-dummy.m"; sourceTree = "<group>"; };
+		A5A99F40BBC0D585FC427F9B /* DraugiemSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DraugiemSDK.h; sourceTree = "<group>"; };
+		AA01DD4EB1480FE872305514 /* DRHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DRHelper.h; sourceTree = "<group>"; };
+		ACA361AD5BFD368191DDD08B /* Pods-Tests-DraugiemSDK-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests-DraugiemSDK-Private.xcconfig"; path = "../Pods-Tests-DraugiemSDK/Pods-Tests-DraugiemSDK-Private.xcconfig"; sourceTree = "<group>"; };
+		B2F2500A17E3364E1D027779 /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4658EB99EB494815D4E58D2 /* libPods-DraugiemSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DraugiemSDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6BC6FD834AB8C281D639120 /* DRHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DRHelper.m; sourceTree = "<group>"; };
+		C70B0451DB09F8BD030D7FCF /* DRError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DRError.m; sourceTree = "<group>"; };
+		CB36DCE7DC6CC7709245A72A /* DraugiemSDK.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DraugiemSDK.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		D00A79AA68DAFD9B62138301 /* Pods-DraugiemSDK-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DraugiemSDK-acknowledgements.markdown"; sourceTree = "<group>"; };
+		DA4E43F340A2CEEA3A3937B8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		DB548FB34DF33A9FCDAF32D9 /* Pods-Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Tests-dummy.m"; sourceTree = "<group>"; };
+		DC717D709D7217B0367AE926 /* DraugiemSDK.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DraugiemSDK.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5C8E4E62C35BD78D4B06F0A /* Pods-DraugiemSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DraugiemSDK.debug.xcconfig"; sourceTree = "<group>"; };
+		EA0A9A9671D4883FE23F2CE3 /* libPods-DraugiemSDK-DraugiemSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DraugiemSDK-DraugiemSDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC952A8B61756A0489D2DE38 /* Pods-Tests-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Tests-environment.h"; sourceTree = "<group>"; };
+		FA54789D2016A064F8DA82DF /* Pods-Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tests-resources.sh"; sourceTree = "<group>"; };
+		FAEE07FC7B8BF9B770B541FE /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		940CC9B7DE83570750CE8A81 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3A8C84FC551EDB54AEBE0423 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BC46C07250901212A7BEDF05 /* Frameworks */ = {
+		075BB020842A48E495EFB724 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C040B13E3E0CF2813B474949 /* Frameworks */ = {
+		44D51A003B671E88DDF13D0F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				296A33BF3EF14D66FC288D32 /* Foundation.framework in Frameworks */,
+				0436E69922B35E5F67A44CFE /* Foundation.framework in Frameworks */,
+				70894F2535BDD46417136B4A /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CAAD75C70123C5213275A43A /* Frameworks */ = {
+		4913D69B799FA3A2DBA501CB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB476E213D96488D1DE62D92 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66F70F5108A0131540E7B222 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E478518922C797A678D2C419 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FE09D33E0C0FE32DE5B8ED1 /* Foundation.framework in Frameworks */,
+				CFB8C9EE6E70A69F172EC6E7 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEA37736DC0392E198CC71B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AB254AB3E8B60F9EA5497E5 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0202A45DB8198919D5567B64 /* Products */ = {
+		07810C7EBC45DDA0E5322B31 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				07C0C68A299608252A51ACBD /* DraugiemSDK.bundle */,
-				4AA34E9FF3168E62FE3AAF7F /* DraugiemSDK.bundle */,
-				97A7804440E71271D71582B2 /* libPods-DraugiemSDK.a */,
-				0A44748C4BDFE3AC42003DC1 /* libPods-Tests.a */,
+				DA4E43F340A2CEEA3A3937B8 /* Foundation.framework */,
+				5901A32754A1E16365AFD191 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		108CFE13CB7A4321AABF324F /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CB4DE8F2703EED444B13D32D /* DraugiemSDK */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		18B8FEF69715B7DE84063C17 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				81D4F5AC7067B2EA02BDC8D0 /* Classes */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		229194516D7E2BFB029B5101 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07810C7EBC45DDA0E5322B31 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2514DE4FC6DC38188CADB8FC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB36DCE7DC6CC7709245A72A /* DraugiemSDK.bundle */,
+				DC717D709D7217B0367AE926 /* DraugiemSDK.bundle */,
+				B4658EB99EB494815D4E58D2 /* libPods-DraugiemSDK.a */,
+				EA0A9A9671D4883FE23F2CE3 /* libPods-DraugiemSDK-DraugiemSDK.a */,
+				B2F2500A17E3364E1D027779 /* libPods-Tests.a */,
+				5E62C37635E3CF1A6B562E24 /* libPods-Tests-DraugiemSDK.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0C19FD3CD509C4AA1C9C7B64 /* Pods-DraugiemSDK */ = {
+		35DB1B21FD5C0CD554E1F494 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				D1742B36D1328A72327ED0CC /* Pods-DraugiemSDK-acknowledgements.markdown */,
-				DEEBE05CBFF73464863939AC /* Pods-DraugiemSDK-acknowledgements.plist */,
-				9DCBD8FC151A8258FCFA6FC8 /* Pods-DraugiemSDK-dummy.m */,
-				2EBC2C80A1FAA77EA0D8F45A /* Pods-DraugiemSDK-environment.h */,
-				384D42E14B83CA7CA4B24CD7 /* Pods-DraugiemSDK-resources.sh */,
-				041C50F0541D8011A111BAC1 /* Pods-DraugiemSDK.debug.xcconfig */,
-				AF184CD34A19DB34F8BA1EEF /* Pods-DraugiemSDK.release.xcconfig */,
+				3F169221F9EDF44E38A681F2 /* Pods-DraugiemSDK */,
+				9F7B4973656BBC36AA1E2F68 /* Pods-Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		3F169221F9EDF44E38A681F2 /* Pods-DraugiemSDK */ = {
+			isa = PBXGroup;
+			children = (
+				D00A79AA68DAFD9B62138301 /* Pods-DraugiemSDK-acknowledgements.markdown */,
+				4570DFA387785E7386B69B0C /* Pods-DraugiemSDK-acknowledgements.plist */,
+				445F0F2FC9283344024F7D2D /* Pods-DraugiemSDK-dummy.m */,
+				201612A68728610E357185FB /* Pods-DraugiemSDK-environment.h */,
+				5DCEAEE3E550835038066B3B /* Pods-DraugiemSDK-resources.sh */,
+				E5C8E4E62C35BD78D4B06F0A /* Pods-DraugiemSDK.debug.xcconfig */,
+				8A2CEF8F346F5706DEB69EB5 /* Pods-DraugiemSDK.release.xcconfig */,
 			);
 			name = "Pods-DraugiemSDK";
 			path = "Target Support Files/Pods-DraugiemSDK";
 			sourceTree = "<group>";
 		};
-		16B9C43D3D8566E8D13DFBE2 /* DraugiemSDK */ = {
+		81D4F5AC7067B2EA02BDC8D0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A316154573AF54F146537CB6 /* Private */,
+				B3E7B5C9C7F369C0066F3E6D /* Public */,
 			);
-			name = DraugiemSDK;
-			path = ../..;
+			path = Classes;
 			sourceTree = "<group>";
 		};
-		4AC70FA9A7639DD3A66F8191 = {
+		9E9AA4CFCD594B278886204D = {
 			isa = PBXGroup;
 			children = (
-				EF40923D844A1186EA9E579B /* Podfile */,
-				E296F36079F09269AC1681BB /* Development Pods */,
-				6E1DC7909CD36E47F1837D0D /* Frameworks */,
-				0202A45DB8198919D5567B64 /* Products */,
-				73B0A4060B9B5123CA12FCD2 /* Targets Support Files */,
+				FAEE07FC7B8BF9B770B541FE /* Podfile */,
+				108CFE13CB7A4321AABF324F /* Development Pods */,
+				229194516D7E2BFB029B5101 /* Frameworks */,
+				2514DE4FC6DC38188CADB8FC /* Products */,
+				35DB1B21FD5C0CD554E1F494 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		6E1DC7909CD36E47F1837D0D /* Frameworks */ = {
+		9F7B4973656BBC36AA1E2F68 /* Pods-Tests */ = {
 			isa = PBXGroup;
 			children = (
-				FA490A240D56EEDB56794FB7 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		73B0A4060B9B5123CA12FCD2 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				0C19FD3CD509C4AA1C9C7B64 /* Pods-DraugiemSDK */,
-				A221C754F1D832A50ED1CEB2 /* Pods-Tests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		A221C754F1D832A50ED1CEB2 /* Pods-Tests */ = {
-			isa = PBXGroup;
-			children = (
-				DD1A75BF40C8A4123BF0EDFD /* Pods-Tests-acknowledgements.markdown */,
-				E51C8F3350CE5972968C397E /* Pods-Tests-acknowledgements.plist */,
-				BF444762EADAE4A598E7FCC0 /* Pods-Tests-dummy.m */,
-				6E5AD5BA98F400DA861CBE73 /* Pods-Tests-environment.h */,
-				1CEF2CB1FA6690BAD4A19AAC /* Pods-Tests-resources.sh */,
-				01D27132441CE1619495E518 /* Pods-Tests.debug.xcconfig */,
-				079FD50124CFBA6232D64BF8 /* Pods-Tests.release.xcconfig */,
+				76FF5D00D6CC32FD27DA488C /* Pods-Tests-acknowledgements.markdown */,
+				9BB864877FC9766B332A8129 /* Pods-Tests-acknowledgements.plist */,
+				DB548FB34DF33A9FCDAF32D9 /* Pods-Tests-dummy.m */,
+				EC952A8B61756A0489D2DE38 /* Pods-Tests-environment.h */,
+				FA54789D2016A064F8DA82DF /* Pods-Tests-resources.sh */,
+				01BAC67D617A055F57CCFE9E /* Pods-Tests.debug.xcconfig */,
+				44906277F8477C577A73E6B1 /* Pods-Tests.release.xcconfig */,
 			);
 			name = "Pods-Tests";
 			path = "Target Support Files/Pods-Tests";
 			sourceTree = "<group>";
 		};
-		E296F36079F09269AC1681BB /* Development Pods */ = {
+		A316154573AF54F146537CB6 /* Private */ = {
 			isa = PBXGroup;
 			children = (
-				16B9C43D3D8566E8D13DFBE2 /* DraugiemSDK */,
+				6C63AA6DBEC8586697AF1CC8 /* DRError.h */,
+				C70B0451DB09F8BD030D7FCF /* DRError.m */,
+				AA01DD4EB1480FE872305514 /* DRHelper.h */,
+				C6BC6FD834AB8C281D639120 /* DRHelper.m */,
 			);
-			name = "Development Pods";
+			path = Private;
 			sourceTree = "<group>";
 		};
-		FA490A240D56EEDB56794FB7 /* iOS */ = {
+		B3E7B5C9C7F369C0066F3E6D /* Public */ = {
 			isa = PBXGroup;
 			children = (
-				4E00B9C022E064969CA07D9E /* Foundation.framework */,
+				A5A99F40BBC0D585FC427F9B /* DraugiemSDK.h */,
+				2E7A21203E0D206275540DD2 /* DraugiemSDK.m */,
+				23E9B64A1A699BA8C2D5BCF7 /* DRConstants.h */,
+				524A83093FC63F1E90697282 /* DRConstants.m */,
+				06A8558218719AA268EB152B /* DRUser.h */,
+				61664A01DA4D5695626C0A9F /* DRUser.m */,
 			);
-			name = iOS;
+			path = Public;
+			sourceTree = "<group>";
+		};
+		BD65B7848DDCB3379FE687E7 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2C6D8CB5EE21F61433194176 /* Pods-DraugiemSDK-DraugiemSDK.xcconfig */,
+				013B03807140A39F5EC0FDC6 /* Pods-DraugiemSDK-DraugiemSDK-Private.xcconfig */,
+				30915AA1C3CA638D39CC1FE4 /* Pods-DraugiemSDK-DraugiemSDK-dummy.m */,
+				63FEAAD0BAB9AE3B73B500E0 /* Pods-DraugiemSDK-DraugiemSDK-prefix.pch */,
+				2CCB7881B5416C229340B705 /* Pods-Tests-DraugiemSDK.xcconfig */,
+				ACA361AD5BFD368191DDD08B /* Pods-Tests-DraugiemSDK-Private.xcconfig */,
+				9D39445C54B23E6B432C81C4 /* Pods-Tests-DraugiemSDK-dummy.m */,
+				21FB46AD27B367927BBDABDB /* Pods-Tests-DraugiemSDK-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/Pods-DraugiemSDK-DraugiemSDK";
+			sourceTree = "<group>";
+		};
+		CB4DE8F2703EED444B13D32D /* DraugiemSDK */ = {
+			isa = PBXGroup;
+			children = (
+				18B8FEF69715B7DE84063C17 /* Pod */,
+				BD65B7848DDCB3379FE687E7 /* Support Files */,
+			);
+			name = DraugiemSDK;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
-/* Begin PBXNativeTarget section */
-		365A022EA0C4D2F7FAF5A26E /* Pods-DraugiemSDK */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C2ED1182DB3CE981AC1FE2B6 /* Build configuration list for PBXNativeTarget "Pods-DraugiemSDK" */;
-			buildPhases = (
-				3F299FD9E3B9811EDAC24109 /* Sources */,
-				940CC9B7DE83570750CE8A81 /* Frameworks */,
+/* Begin PBXHeadersBuildPhase section */
+		318C4C7E76EEBEC45B935483 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D8B0AF00B45BF09E4356217 /* DRConstants.h in Headers */,
+				B1EF6E924934F7AD6A38F68F /* DRError.h in Headers */,
+				982D2C900DE8FEFA9014DD42 /* DRHelper.h in Headers */,
+				EBE2AD0F17B1076C7D4B85B5 /* DRUser.h in Headers */,
+				6CECC76D72DCD80F4D04D255 /* DraugiemSDK.h in Headers */,
 			);
-			buildRules = (
-			);
-			dependencies = (
-				7220CCA33FE5B169D8B42DE3 /* PBXTargetDependency */,
-			);
-			name = "Pods-DraugiemSDK";
-			productName = "Pods-DraugiemSDK";
-			productReference = 97A7804440E71271D71582B2 /* libPods-DraugiemSDK.a */;
-			productType = "com.apple.product-type.library.static";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
-		374F6877A965B3DDDD254276 /* Pods-DraugiemSDK-DraugiemSDK-DraugiemSDK */ = {
+		98949FB00FEDBAB363676C51 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6912E24A205F216740A29A15 /* DRConstants.h in Headers */,
+				A7E1D4D9EE288DA86CE52A38 /* DRError.h in Headers */,
+				A0486A525F5F1FCADF1A7DFE /* DRHelper.h in Headers */,
+				F29D013E46D16550449E966F /* DRUser.h in Headers */,
+				0ECB627E7948B0DE2E633CEA /* DraugiemSDK.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		09B3F59962C3558C1DEA9C2D /* Pods-DraugiemSDK-DraugiemSDK-DraugiemSDK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BE21E6BC7E9E1F001C4F69E6 /* Build configuration list for PBXNativeTarget "Pods-DraugiemSDK-DraugiemSDK-DraugiemSDK" */;
+			buildConfigurationList = EB935133F67F3844D30950BF /* Build configuration list for PBXNativeTarget "Pods-DraugiemSDK-DraugiemSDK-DraugiemSDK" */;
 			buildPhases = (
-				867D32314D3EE12959D08294 /* Sources */,
-				CAAD75C70123C5213275A43A /* Frameworks */,
-				2C0877F3BEF600EFBB92FC4F /* Resources */,
+				A7F2FCEAE32E60F13FA20CF5 /* Sources */,
+				075BB020842A48E495EFB724 /* Frameworks */,
+				FA636C11BA586A4980420A28 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -214,16 +365,86 @@
 			);
 			name = "Pods-DraugiemSDK-DraugiemSDK-DraugiemSDK";
 			productName = "Pods-DraugiemSDK-DraugiemSDK-DraugiemSDK";
-			productReference = 07C0C68A299608252A51ACBD /* DraugiemSDK.bundle */;
+			productReference = DC717D709D7217B0367AE926 /* DraugiemSDK.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
-		8A32DF84319B08B1A38F242F /* Pods-Tests-DraugiemSDK-DraugiemSDK */ = {
+		272CE305305880ACE3D28241 /* Pods-Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 820279E2E142E87DDA668EE0 /* Build configuration list for PBXNativeTarget "Pods-Tests-DraugiemSDK-DraugiemSDK" */;
+			buildConfigurationList = 3E0652F648BC320D51C4ED34 /* Build configuration list for PBXNativeTarget "Pods-Tests" */;
 			buildPhases = (
-				8AA63AF0AF7045B479D3A446 /* Sources */,
-				BC46C07250901212A7BEDF05 /* Frameworks */,
-				44FC7A3FDC18AC2F4190CA02 /* Resources */,
+				24AD9CC315F69EF287203CA5 /* Sources */,
+				4913D69B799FA3A2DBA501CB /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				14A3AA7EC2779F042A11EEE5 /* PBXTargetDependency */,
+			);
+			name = "Pods-Tests";
+			productName = "Pods-Tests";
+			productReference = B2F2500A17E3364E1D027779 /* libPods-Tests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		5145D9FAE862AF571FC8E75A /* Pods-Tests-DraugiemSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4DC38B0230D619A0F7A415C6 /* Build configuration list for PBXNativeTarget "Pods-Tests-DraugiemSDK" */;
+			buildPhases = (
+				B2B0DE7EDFD91A6DACD21761 /* Sources */,
+				44D51A003B671E88DDF13D0F /* Frameworks */,
+				98949FB00FEDBAB363676C51 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45A26201A625C91158E3FEA3 /* PBXTargetDependency */,
+			);
+			name = "Pods-Tests-DraugiemSDK";
+			productName = "Pods-Tests-DraugiemSDK";
+			productReference = 5E62C37635E3CF1A6B562E24 /* libPods-Tests-DraugiemSDK.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		7C23D237134595BBB418891F /* Pods-DraugiemSDK-DraugiemSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7786E1D5EE8CAD29BE95507E /* Build configuration list for PBXNativeTarget "Pods-DraugiemSDK-DraugiemSDK" */;
+			buildPhases = (
+				FA640D00A5E4ADCB79C1468A /* Sources */,
+				E478518922C797A678D2C419 /* Frameworks */,
+				318C4C7E76EEBEC45B935483 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				41A1C5E0BA352EF0853A503A /* PBXTargetDependency */,
+			);
+			name = "Pods-DraugiemSDK-DraugiemSDK";
+			productName = "Pods-DraugiemSDK-DraugiemSDK";
+			productReference = EA0A9A9671D4883FE23F2CE3 /* libPods-DraugiemSDK-DraugiemSDK.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C64342C4A196DD477635481A /* Pods-DraugiemSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE0F4CA60C3AF84C8F909AF6 /* Build configuration list for PBXNativeTarget "Pods-DraugiemSDK" */;
+			buildPhases = (
+				AAF18209C4471B1925C8AEC6 /* Sources */,
+				FEA37736DC0392E198CC71B0 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				23A20A3C514A289F2B763CF3 /* PBXTargetDependency */,
+			);
+			name = "Pods-DraugiemSDK";
+			productName = "Pods-DraugiemSDK";
+			productReference = B4658EB99EB494815D4E58D2 /* libPods-DraugiemSDK.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		EC684C5A0D9D6439524BF260 /* Pods-Tests-DraugiemSDK-DraugiemSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12F9E8BA539150A3F4635DEF /* Build configuration list for PBXNativeTarget "Pods-Tests-DraugiemSDK-DraugiemSDK" */;
+			buildPhases = (
+				889CFF82DDD31F93985D8925 /* Sources */,
+				66F70F5108A0131540E7B222 /* Frameworks */,
+				62C38EA4D2B696E57ED88660 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -231,63 +452,48 @@
 			);
 			name = "Pods-Tests-DraugiemSDK-DraugiemSDK";
 			productName = "Pods-Tests-DraugiemSDK-DraugiemSDK";
-			productReference = 4AA34E9FF3168E62FE3AAF7F /* DraugiemSDK.bundle */;
+			productReference = CB36DCE7DC6CC7709245A72A /* DraugiemSDK.bundle */;
 			productType = "com.apple.product-type.bundle";
-		};
-		D5B1E35E76D56A5628AE3048 /* Pods-Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 90DC2D616DF238182652F313 /* Build configuration list for PBXNativeTarget "Pods-Tests" */;
-			buildPhases = (
-				2D5D7A01991F3D6E16457DD1 /* Sources */,
-				C040B13E3E0CF2813B474949 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9F8DC3273E748537D97FCF75 /* PBXTargetDependency */,
-			);
-			name = "Pods-Tests";
-			productName = "Pods-Tests";
-			productReference = 0A44748C4BDFE3AC42003DC1 /* libPods-Tests.a */;
-			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		B501DDE7740A99B0FA80D575 /* Project object */ = {
+		D79BC59FE3E0D0FC1D512518 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
 			};
-			buildConfigurationList = BEB809EC59C3548335BD4484 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 4111B39BAD80DD5969ECB7D1 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 4AC70FA9A7639DD3A66F8191;
-			productRefGroup = 0202A45DB8198919D5567B64 /* Products */;
+			mainGroup = 9E9AA4CFCD594B278886204D;
+			productRefGroup = 2514DE4FC6DC38188CADB8FC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				365A022EA0C4D2F7FAF5A26E /* Pods-DraugiemSDK */,
-				374F6877A965B3DDDD254276 /* Pods-DraugiemSDK-DraugiemSDK-DraugiemSDK */,
-				D5B1E35E76D56A5628AE3048 /* Pods-Tests */,
-				8A32DF84319B08B1A38F242F /* Pods-Tests-DraugiemSDK-DraugiemSDK */,
+				C64342C4A196DD477635481A /* Pods-DraugiemSDK */,
+				7C23D237134595BBB418891F /* Pods-DraugiemSDK-DraugiemSDK */,
+				09B3F59962C3558C1DEA9C2D /* Pods-DraugiemSDK-DraugiemSDK-DraugiemSDK */,
+				272CE305305880ACE3D28241 /* Pods-Tests */,
+				5145D9FAE862AF571FC8E75A /* Pods-Tests-DraugiemSDK */,
+				EC684C5A0D9D6439524BF260 /* Pods-Tests-DraugiemSDK-DraugiemSDK */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2C0877F3BEF600EFBB92FC4F /* Resources */ = {
+		62C38EA4D2B696E57ED88660 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		44FC7A3FDC18AC2F4190CA02 /* Resources */ = {
+		FA636C11BA586A4980420A28 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -297,71 +503,93 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2D5D7A01991F3D6E16457DD1 /* Sources */ = {
+		24AD9CC315F69EF287203CA5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34A8EBAE60CA7EC89EB4D1C8 /* Pods-Tests-dummy.m in Sources */,
+				76503CB992BFE0088DDA8A9C /* Pods-Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3F299FD9E3B9811EDAC24109 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E92CFDBB14EC9535E807963A /* Pods-DraugiemSDK-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		867D32314D3EE12959D08294 /* Sources */ = {
+		889CFF82DDD31F93985D8925 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8AA63AF0AF7045B479D3A446 /* Sources */ = {
+		A7F2FCEAE32E60F13FA20CF5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAF18209C4471B1925C8AEC6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D0D3065D642B0AD8344A93A /* Pods-DraugiemSDK-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2B0DE7EDFD91A6DACD21761 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00769212E20EBB94E40BFCA6 /* DRConstants.m in Sources */,
+				91FEEC2DD48BBFEACBDEC4DB /* DRError.m in Sources */,
+				29363FC8BA8DA40A4846EDD7 /* DRHelper.m in Sources */,
+				744AC40BD42D5316FA2A9486 /* DRUser.m in Sources */,
+				65BA5797E77D23EDF26A6EA4 /* DraugiemSDK.m in Sources */,
+				78B1FBE2DCDF8631A67CA24A /* Pods-Tests-DraugiemSDK-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA640D00A5E4ADCB79C1468A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A7DA0C87CBCD5608FE346B1 /* DRConstants.m in Sources */,
+				B7E8CFC44ED790DD262675EB /* DRError.m in Sources */,
+				F0967BEF9E38F9499AAAFC83 /* DRHelper.m in Sources */,
+				DFF6404D203F4B5A227E3EDA /* DRUser.m in Sources */,
+				6C0C91F3ACC5CAAD0D933FA2 /* DraugiemSDK.m in Sources */,
+				9094653B7B69FB9AB135DF11 /* Pods-DraugiemSDK-DraugiemSDK-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		7220CCA33FE5B169D8B42DE3 /* PBXTargetDependency */ = {
+		14A3AA7EC2779F042A11EEE5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Tests-DraugiemSDK";
+			target = 5145D9FAE862AF571FC8E75A /* Pods-Tests-DraugiemSDK */;
+			targetProxy = A6454DAE665C7D80D4DD95FE /* PBXContainerItemProxy */;
+		};
+		23A20A3C514A289F2B763CF3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-DraugiemSDK-DraugiemSDK";
+			target = 7C23D237134595BBB418891F /* Pods-DraugiemSDK-DraugiemSDK */;
+			targetProxy = C89C71B2271294BCA87869C5 /* PBXContainerItemProxy */;
+		};
+		41A1C5E0BA352EF0853A503A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-DraugiemSDK-DraugiemSDK-DraugiemSDK";
-			target = 374F6877A965B3DDDD254276 /* Pods-DraugiemSDK-DraugiemSDK-DraugiemSDK */;
-			targetProxy = AAB2548F439F878F284D1E14 /* PBXContainerItemProxy */;
+			target = 09B3F59962C3558C1DEA9C2D /* Pods-DraugiemSDK-DraugiemSDK-DraugiemSDK */;
+			targetProxy = 06453422FCCE1BDA541F44AF /* PBXContainerItemProxy */;
 		};
-		9F8DC3273E748537D97FCF75 /* PBXTargetDependency */ = {
+		45A26201A625C91158E3FEA3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-Tests-DraugiemSDK-DraugiemSDK";
-			target = 8A32DF84319B08B1A38F242F /* Pods-Tests-DraugiemSDK-DraugiemSDK */;
-			targetProxy = 8A15ABE1646145AB49BF1524 /* PBXContainerItemProxy */;
+			target = EC684C5A0D9D6439524BF260 /* Pods-Tests-DraugiemSDK-DraugiemSDK */;
+			targetProxy = FBB3055FC5E225A00079ED4D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0EE1C0402371E80ED1A5BB7A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 01D27132441CE1619495E518 /* Pods-Tests.debug.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		2DDD84E1E7F06703E40BD7CF /* Debug */ = {
+		0C097273C14788D37C2CACFF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -372,77 +600,7 @@
 			};
 			name = Debug;
 		};
-		57214CF68D83F8F123B0FE46 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = DraugiemSDK;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		6F202D8DEE26E0C9D9A1B5D5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = DraugiemSDK;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		70A21AD2329E634D800A11DC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AF184CD34A19DB34F8BA1EEF /* Pods-DraugiemSDK.release.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		9205903D6FE61256ABE21D9C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 079FD50124CFBA6232D64BF8 /* Pods-Tests.release.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		955A6A441062135B0C697343 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 041C50F0541D8011A111BAC1 /* Pods-DraugiemSDK.debug.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		A74CCE5731DA7731E8A53512 /* Debug */ = {
+		3BA6D602603CB2A76770FA1F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -453,41 +611,7 @@
 			};
 			name = Debug;
 		};
-		D11BA7D2FC2253F073F6F58B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		E58A329FF6157BC054D1A00C /* Debug */ = {
+		59A16CD8A6EBA212BB71F028 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -526,55 +650,257 @@
 			};
 			name = Debug;
 		};
+		5BBAE63DE15669F5762C2DCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44906277F8477C577A73E6B1 /* Pods-Tests.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		76A569766166D1A0C139F2D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9964C089A3C8C781CE05E6BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5C8E4E62C35BD78D4B06F0A /* Pods-DraugiemSDK.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		9C95E16225F8E6238AF05082 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = DraugiemSDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		9F5C568731C2BB839DFBDB65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACA361AD5BFD368191DDD08B /* Pods-Tests-DraugiemSDK-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Tests-DraugiemSDK/Pods-Tests-DraugiemSDK-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A831C3DEE891C76A3B071631 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01BAC67D617A055F57CCFE9E /* Pods-Tests.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		BEB75B40E3460AAC1654C577 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 013B03807140A39F5EC0FDC6 /* Pods-DraugiemSDK-DraugiemSDK-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-DraugiemSDK-DraugiemSDK/Pods-DraugiemSDK-DraugiemSDK-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		C2139BC704EF865FB9665C5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACA361AD5BFD368191DDD08B /* Pods-Tests-DraugiemSDK-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Tests-DraugiemSDK/Pods-Tests-DraugiemSDK-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		D07AC895838182D127E63666 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 013B03807140A39F5EC0FDC6 /* Pods-DraugiemSDK-DraugiemSDK-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-DraugiemSDK-DraugiemSDK/Pods-DraugiemSDK-DraugiemSDK-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D15CF94AEC1F2A0515A2A125 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A2CEF8F346F5706DEB69EB5 /* Pods-DraugiemSDK.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		E924092BF402DF062BC271A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = DraugiemSDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		820279E2E142E87DDA668EE0 /* Build configuration list for PBXNativeTarget "Pods-Tests-DraugiemSDK-DraugiemSDK" */ = {
+		12F9E8BA539150A3F4635DEF /* Build configuration list for PBXNativeTarget "Pods-Tests-DraugiemSDK-DraugiemSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2DDD84E1E7F06703E40BD7CF /* Debug */,
-				57214CF68D83F8F123B0FE46 /* Release */,
+				3BA6D602603CB2A76770FA1F /* Debug */,
+				E924092BF402DF062BC271A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		90DC2D616DF238182652F313 /* Build configuration list for PBXNativeTarget "Pods-Tests" */ = {
+		3E0652F648BC320D51C4ED34 /* Build configuration list for PBXNativeTarget "Pods-Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0EE1C0402371E80ED1A5BB7A /* Debug */,
-				9205903D6FE61256ABE21D9C /* Release */,
+				A831C3DEE891C76A3B071631 /* Debug */,
+				5BBAE63DE15669F5762C2DCD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BE21E6BC7E9E1F001C4F69E6 /* Build configuration list for PBXNativeTarget "Pods-DraugiemSDK-DraugiemSDK-DraugiemSDK" */ = {
+		4111B39BAD80DD5969ECB7D1 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A74CCE5731DA7731E8A53512 /* Debug */,
-				6F202D8DEE26E0C9D9A1B5D5 /* Release */,
+				59A16CD8A6EBA212BB71F028 /* Debug */,
+				76A569766166D1A0C139F2D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BEB809EC59C3548335BD4484 /* Build configuration list for PBXProject "Pods" */ = {
+		4DC38B0230D619A0F7A415C6 /* Build configuration list for PBXNativeTarget "Pods-Tests-DraugiemSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E58A329FF6157BC054D1A00C /* Debug */,
-				D11BA7D2FC2253F073F6F58B /* Release */,
+				9F5C568731C2BB839DFBDB65 /* Debug */,
+				C2139BC704EF865FB9665C5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C2ED1182DB3CE981AC1FE2B6 /* Build configuration list for PBXNativeTarget "Pods-DraugiemSDK" */ = {
+		7786E1D5EE8CAD29BE95507E /* Build configuration list for PBXNativeTarget "Pods-DraugiemSDK-DraugiemSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				955A6A441062135B0C697343 /* Debug */,
-				70A21AD2329E634D800A11DC /* Release */,
+				D07AC895838182D127E63666 /* Debug */,
+				BEB75B40E3460AAC1654C577 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE0F4CA60C3AF84C8F909AF6 /* Build configuration list for PBXNativeTarget "Pods-DraugiemSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9964C089A3C8C781CE05E6BC /* Debug */,
+				D15CF94AEC1F2A0515A2A125 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB935133F67F3844D30950BF /* Build configuration list for PBXNativeTarget "Pods-DraugiemSDK-DraugiemSDK-DraugiemSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C097273C14788D37C2CACFF /* Debug */,
+				9C95E16225F8E6238AF05082 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = B501DDE7740A99B0FA80D575 /* Project object */;
+	rootObject = D79BC59FE3E0D0FC1D512518 /* Project object */;
 }

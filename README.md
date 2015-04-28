@@ -14,7 +14,7 @@ Installation
 Navigate to [your draugiem developer page](https://www.draugiem.lv/applications/dev/myapps/) and create a new application.
 Fill in the details. You should end up with something like this:
 
-![Screen Shot 2015-04-24 at 16.36.10.png](https://bitbucket.org/repo/Bp78R5/images/1383201365-Screen%20Shot%202015-04-24%20at%2016.36.10.png)
+![appCreationForm.png](https://www.dropbox.com/s/6z7o4j4hfcbp2a6/appCreationForm.png?dl=0)
 
 Take note of your application ID (15019040 in example) and application API key (068411db50ed4d0de895d4405461f112 in example).
 
@@ -33,7 +33,7 @@ pod "DraugiemSDK"
 
 Create an array key called URL types with a single array sub-item called URL Schemes in the .plist file of your project. Give this a single item with your app ID prefixed with 'dr'. The according fragment of finished .plist should look like this:
 
-![Screen Shot 2015-04-24 at 16.43.05.png](https://bitbucket.org/repo/Bp78R5/images/2531074090-Screen%20Shot%202015-04-24%20at%2016.43.05.png)
+![plistFragment.png](https://www.dropbox.com/s/g8sy62mhxcu1hba/plistFragment.png?dl=0)
 
 This is used to ensure the application will receive a callback from native Draugiem iOS app or Safari web browser when performing external actions.
 
@@ -95,6 +95,6 @@ If no errors are encountered, you may request user object of the current client.
 Appendix
 ===============
 
-**Help:** Refer to the example project provided in [this repo](https://bitbucket.org/aigarssilavs/draugiemsdk-ios) and [draugiem developer portal](https://www.draugiem.lv/applications/dev/) for more information.
+**Help:** Refer to the example project provided in [this repo](https://github.com/aigarssilavs/DraugiemSDK/tree/master/Example) and [draugiem developer portal](https://www.draugiem.lv/applications/dev/) for more information.
 
-**License:** DraugiemSDK is available under the WTFPL license. See the LICENSE file for more info.
+**License:** DraugiemSDK is available under the WTFPL license. See the [LICENSE](https://github.com/aigarssilavs/DraugiemSDK/blob/master/LICENSE) file for more info.
