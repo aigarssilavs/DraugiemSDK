@@ -53,4 +53,19 @@
     }];
 }
 
+- (IBAction)buyItemButtonTapped:(UIButton *)sender
+{
+    DRId demoItemId = 0;
+    [Draugiem buyItemWithID:demoItemId completion:^(DRTransaction *transaction, NSError *error) {
+        if (transaction) {
+            //Transaction was created, but not necessarilly completed. Refer to the "completed" property.
+            self.textView.text = [NSString stringWithFormat:@"Transaction with id: %@ was%@ completed.",
+                                  @(transaction.identificator),
+                                  transaction.completed ? @"" : @"n't"];
+        } else {
+            self.textView.text = [NSString stringWithFormat:@"%@", error];
+        }
+    }];
+}
+
 @end

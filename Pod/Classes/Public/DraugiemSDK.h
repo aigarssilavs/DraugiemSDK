@@ -10,6 +10,7 @@
 #import <Foundation/Foundation.h>
 #import "DRConstants.h"
 #import "DRUser.h"
+#import "DRTransaction.h"
 
 /**Macro for convenience*/
 #define Draugiem [DraugiemSDK sharedInstance]
@@ -86,6 +87,11 @@
  @abstract Deletes the local Draugiem client apiKey. This will not void the permissions granted to your app by the user.
  */
 - (void)logOut;
+
+/**
+@warning Not implemented
+*/
+- (void)buyItemWithID:(DRId)itemId completion:(void (^)(DRTransaction *transaction, NSError *error))completionHandler;
 
 #pragma mark Direct API calls
 

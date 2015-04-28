@@ -154,6 +154,13 @@
     _apiKey = nil;
 }
 
+- (void)buyItemWithID:(DRId)itemId completion:(void (^)(DRTransaction *transaction, NSError *error))completionHandler
+{
+    [self performAction:kDraugiemActionPurchase
+             parameters:@{kDraugiemQueryKeyPurchaseId:@(itemId)}
+             completion:completionHandler];
+}
+
 #pragma mark Direct API calls
 
 - (void)clientWithCompletion:(void (^)(DRUser *client, NSError *error))completionHandler

@@ -42,7 +42,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="JxL-QB-dpZ">
-                                        <rect key="frame" x="16" y="54" width="288" height="46"/>
+                                        <rect key="frame" x="16" y="54" width="140" height="46"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.57453689799999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
@@ -65,6 +65,19 @@
                                         </state>
                                         <connections>
                                             <action selector="logOutButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Ohw-vi-jZM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="74W-BQ-VqF">
+                                        <rect key="frame" x="164" y="54" width="140" height="46"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.57453689799999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="Buy item">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buyItemButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="rbU-h6-qgx"/>
                                         </connections>
                                     </button>
                                 </subviews>
