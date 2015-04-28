@@ -14,7 +14,7 @@ Installation
 Navigate to [your draugiem developer page](https://www.draugiem.lv/applications/dev/myapps/) and create a new application.
 Fill in the details. You should end up with something like this:
 
-![appCreationForm.png](https://www.dropbox.com/s/6z7o4j4hfcbp2a6/appCreationForm.png?dl=0)
+![App creation form](/Documents/appCreationForm.png)
 
 Take note of your application ID (15019040 in example) and application API key (068411db50ed4d0de895d4405461f112 in example).
 
@@ -33,7 +33,7 @@ pod "DraugiemSDK"
 
 Create an array key called URL types with a single array sub-item called URL Schemes in the .plist file of your project. Give this a single item with your app ID prefixed with 'dr'. The according fragment of finished .plist should look like this:
 
-![plistFragment.png](https://www.dropbox.com/s/g8sy62mhxcu1hba/plistFragment.png?dl=0)
+![Plist fragment](/Documents/plistFragment.png)
 
 This is used to ensure the application will receive a callback from native Draugiem iOS app or Safari web browser when performing external actions.
 
