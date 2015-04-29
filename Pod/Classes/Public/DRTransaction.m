@@ -8,7 +8,19 @@
 //
 
 #import "DRTransaction.h"
+#import "DRHelper.h"
 
 @implementation DRTransaction
+
+- (id)initWithJSONDictionary:(NSDictionary *)dictionary
+{
+    if (self = [super init]) {
+        if (dictionary) {
+            _identificator = [dictionary[kDraugiemQueryKeyTransactionId] longLongValue];
+            _completed = [dictionary[kDraugiemQueryKeyTransactionCompleted] boolValue];
+        }
+    }
+    return self;
+}
 
 @end

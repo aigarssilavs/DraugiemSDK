@@ -32,7 +32,7 @@
      In most cases you will need additional information about user, that has authenticated - his/her name, age, gender and so on.
      To obtain this information call [Draugiem clientWithCompletion:] method when login has successfully completed.
      
-     To avoid confusion, the user that has authenticated with DraugiemSDK is refered to as "client".
+     To avoid confusion, the user that has authenticated with Draugiem SDK is refered to as "client".
      */
     [Draugiem logInWithCompletion:^(NSString *apiKey, NSError *error) {
         if (apiKey) {
@@ -100,7 +100,7 @@
      appKey is the private key of your draugiem.lv applicatiom.
      apiKey is the private key of the user, that has granted permissions to your app.
      
-     Both appID and appKey must be set in order for DraugiemSDK login to work.
+     Both appID and appKey must be set in order for Draugiem SDK login to work.
      Both appKey and apiKey must be set for everything, except for login and logout to work.
      apiKey is set automatically on successfull login.
      */

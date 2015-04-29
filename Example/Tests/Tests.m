@@ -21,6 +21,8 @@
 - (void)setUp
 {
     [super setUp];
+    [Draugiem startWithAppID:kDraugiemExampleAppId
+                      appKey:kDraugiemExampleAppKey];
 }
 
 - (void)tearDown
@@ -32,20 +34,20 @@
 - (void)testInvalidStartups
 {
     XCTAssertNotNil([Draugiem startWithAppID:0 appKey:nil]);
-    XCTAssertNotNil([Draugiem startWithAppID:15019040 appKey:nil]);
-    XCTAssertNotNil([Draugiem startWithAppID:0 appKey:@"068411db50ed4d0de895d4405461f112"]);
-    XCTAssertNotNil([Draugiem startWithAppID:19040 appKey:@"068411db50ed4d0de895d4405461f112"]);
-    XCTAssertNotNil([Draugiem startWithAppID:15019040 appKey:@"123456789"]);
+    XCTAssertNotNil([Draugiem startWithAppID:kDraugiemExampleAppId appKey:nil]);
+    XCTAssertNotNil([Draugiem startWithAppID:0 appKey:kDraugiemExampleAppKey]);
+    XCTAssertNotNil([Draugiem startWithAppID:19040 appKey:kDraugiemExampleAppKey]);
+    XCTAssertNotNil([Draugiem startWithAppID:kDraugiemExampleAppId appKey:@"123456789"]);
 }
 
 - (void)testValidStartup
 {
-    XCTAssertNil([Draugiem startWithAppID:15019040 appKey:@"068411db50ed4d0de895d4405461f112"]);
+    XCTAssertNil([Draugiem startWithAppID:kDraugiemExampleAppId
+                                   appKey:kDraugiemExampleAppKey]);
 }
 
 - (void)testLoginCallbackWithNoQuery
 {
-    [Draugiem startWithAppID:15019040 appKey:@"068411db50ed4d0de895d4405461f112"];
     [Draugiem logInWithCompletion:^(NSString *apiKey, NSError *error) {
         XCTAssertNotNil(error);
         XCTAssertNil(apiKey);
@@ -59,7 +61,6 @@
 {
     NSString *errorMessage = @"mockErrorMessage";
     
-    [Draugiem startWithAppID:15019040 appKey:@"068411db50ed4d0de895d4405461f112"];
     [Draugiem logInWithCompletion:^(NSString *apiKey, NSError *error) {
         XCTAssertTrue([error.localizedDescription isEqualToString: errorMessage]);
         XCTAssertNil(apiKey);
@@ -72,7 +73,6 @@
 
 - (void)testLoginWithSuccess
 {
-    [Draugiem startWithAppID:15019040 appKey:@"068411db50ed4d0de895d4405461f112"];
     [Draugiem logInWithCompletion:^(NSString *apiKey, NSError *error) {
         XCTAssertNotNil(apiKey);
     }];
@@ -81,5 +81,61 @@
     [Draugiem openURL:mockCallbackURL sourceApplication:@"lv.draugiem.app"];
 }
 
+- (void)testGetClientWithFailure
+{
+    __block BOOL responseReceived = NO;
+    
+    [Draugiem clientWithCompletion:^(DRUser *client, NSError *error) {
+        XCTAssertNil(client);
+        XCTAssertNotNil(error);
+        responseReceived = YES;
+    }];
+    
+    while (responseReceived == NO)  {
+        [[NSRunLoop mainRunLoop] runMode:NSDefaultRunLoopMode
+                              beforeDate:[NSDate distantFuture]];
+    }
+}
+
+- (void)testGetClientWithSuccess
+{
+    __block BOOL responseReceived = NO;
+    const DRId kMatissMillersId = 61334;
+    
+    [Draugiem logInWithCompletion:^(NSString *apiKey, NSError *error) {
+        [Draugiem clientWithCompletion:^(DRUser *client, NSError *error) {
+            
+            if (!error || [error.domain isEqualToString:kErrorDomainDraugiemSDK]) {
+                //avoid connection related errors.
+                XCTAssertTrue(client.identificator == kMatissMillersId);
+                XCTAssertNil(error);
+            } else {
+                //Most likley this is a connection related error
+                XCTAssertNil(client);
+                XCTAssertNotNil(error);
+            }
+            responseReceived = YES;
+        }];
+    }];
+    
+    NSURL *mockCallbackURL = [NSURL URLWithString: @"dr15019040://authorize?api_key=5b23d7c059565aacb9b5f273029ade56"];
+    [Draugiem openURL:mockCallbackURL sourceApplication:@"lv.draugiem.app"];
+    
+    while (responseReceived == NO)  {
+        [[NSRunLoop mainRunLoop] runMode:NSDefaultRunLoopMode
+                              beforeDate:[NSDate distantFuture]];
+    }
+}
+
+- (void)testBuyItemWithFailure
+{
+    [Draugiem buyItemWithID:0 completion:^(DRTransaction *transaction, NSError *error) {
+        XCTAssertNil(transaction);
+        XCTAssertNotNil(error);
+    }];
+    
+    NSURL *mockCallbackURL = [NSURL URLWithString: @"dr15019040://purchase"];
+    [Draugiem openURL:mockCallbackURL sourceApplication:@"lv.draugiem.app"];
+}
 
 @end

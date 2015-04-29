@@ -29,6 +29,8 @@ static NSString *const kDraugiemQueryKeyErrorDomain = @"error_domain";
 static NSString *const kDraugiemQueryKeyErrorCode = @"error_code";
 static NSString *const kDraugiemQueryKeyErrorMessage = @"error";
 static NSString *const kDraugiemQueryKeyApiKey = @"api_key";
+static NSString *const kDraugiemQueryKeyTransactionId = @"transaction_id";
+static NSString *const kDraugiemQueryKeyTransactionCompleted = @"transaction_completed";
 
 //Other constants
 static NSInteger const kDraugiemKeyLength = 32;

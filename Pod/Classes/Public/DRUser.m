@@ -11,11 +11,6 @@
 
 @implementation DRUser
 
-- (id)init
-{
-    return [self initWithJSONDictionary:nil];
-}
-
 - (id)initWithIdentificator:(DRId)identificator
 {
     if (self = [super init]) {
@@ -27,9 +22,7 @@
 - (id)initWithJSONDictionary:(NSDictionary *)dictionary
 {
     if (self = [super init]) {
-        
         if (dictionary) {
-            
             _identificator = [dictionary[@"id"] longLongValue];
             _sex = (DRUserSex)[dictionary[@"sex"] integerValue];
             _title = dictionary[@"title"];

@@ -7,19 +7,24 @@
 //  as published by Sam Hocevar. See http://www.wtfpl.net/ for more details.
 //
 
-#import <Foundation/Foundation.h>
-#import "DRUser.h"
-
-@interface DRTransaction : NSObject
+#import "DRObject.h"
 
 /**
- @abstract The ID of the Draugiem transaction.
+ @abstract Represents a draugiem.lv transaction.
+ @note The fact that transaction exists, doesn't automatically mean that it was completed. Refer to the 'completed'property.
  */
-@property (nonatomic, readonly) DRId identificator;
+@interface DRTransaction : DRObject
 
 /**
  @abstract Whether the transaction has been successfully completed.
  */
 @property (nonatomic, readonly) BOOL completed;
+
+/**
+ @abstract Creates a Draugiem transaction object from the dictionary of Draugiem app or web response.
+ @param dictionary A parsed dictionary of a single Draugiem transaction response.
+ @return An initialized DRTransaction instance.
+ */
+- (id)initWithJSONDictionary:(NSDictionary *)dictionary;
 
 @end

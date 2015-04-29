@@ -44,7 +44,7 @@ typedef NS_ENUM(NSInteger, DRErrorCode) {
      */
     DRErrorInvalidApiKey = 1<<16 | 5,
     /**
-     @abstract Invalid or no url scheme specified in the .plist file of your project. URL scheme has to match 'dr'+15XXXXXX.
+     @abstract Invalid or no url scheme specified in the .plist file of your project. URL scheme has to match 'dr'+[yourAppId].
      */
     DRErrorInvalidURLScheme = 1<<16 | 6,
     /**

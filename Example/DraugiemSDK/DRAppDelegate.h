@@ -9,6 +9,9 @@
 
 #import <UIKit/UIKit.h>
 
+static NSInteger const kDraugiemExampleAppId  = 15019040;
+static NSString *const kDraugiemExampleAppKey = @"068411db50ed4d0de895d4405461f112";
+
 @interface DRAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

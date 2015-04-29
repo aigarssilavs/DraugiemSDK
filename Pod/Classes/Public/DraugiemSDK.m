@@ -35,13 +35,6 @@
     return sharedDraugiemSDK;
 }
 
-- (id)init {
-    if (self = [super init]) {
-        
-    }
-    return self;
-}
-
 - (NSError *)startWithAppID:(DRId)appID appKey:(NSString *)appKey
 {
     if ([[DRUser alloc] initWithIdentificator:appID].type != DRUserTypeAPI) {
@@ -50,11 +43,12 @@
             //Unmissable warning to the developer ir order to avoid a common pitfall.
             NSString *message = [NSString stringWithFormat:@"WARNING: You may have a deprecated Draugiem appID. Try the following appID: %@. Update your .plists URL scheme to \"dr%@\" as well.", @(15000000 + appID), @(15000000 + appID)];
             
-            [[[UIAlertView alloc] initWithTitle:@"Draugiem SDK"
-                                        message:message
-                                       delegate:nil
-                              cancelButtonTitle:@"OK"
-                              otherButtonTitles:nil] show];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Draugiem SDK"
+                                                            message:message
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{[alert show];}];
         }
         return [DRError errorWithCode:DRErrorInvalidAppID];
     }
@@ -107,14 +101,18 @@
         
         if ([action isEqualToString:kDraugiemActionAuthorize]) {
             
-            object = queryDict[kDraugiemQueryKeyApiKey];
+            NSString *apiKey = queryDict[kDraugiemQueryKeyApiKey];
+            object = apiKey.length == kDraugiemKeyLength ? apiKey : nil;
             _apiKey = object;
             
         } else if ([action isEqualToString:kDraugiemActionPurchase]) {
             
-        } else if (error.domain == kErrorDomainDraugiemSDK && error.code == DRErrorNone) {
+            DRTransaction *transaction = [[DRTransaction alloc] initWithJSONDictionary:queryDict];
+            object = transaction.valid ? transaction : nil;
             
-            //No errors until now, but there is no handler for received callback. Should never end up here.
+        } else if ((error.domain == kErrorDomainDraugiemSDK && error.code == DRErrorNone) || !error) {
+            
+            //No errors until now, and there is no handler for received callback. Should never end up here.
             error = [DRError errorWithCode:DRErrorUnknown];
         }
         
@@ -173,7 +171,8 @@
         
         DRUser *client = nil;
         if (responseJSON) {
-            client = [[DRUser alloc] initWithJSONDictionary:responseJSON[kDraugiemMethodGetClient]];
+            DRUser *user = [[DRUser alloc] initWithJSONDictionary:responseJSON[kDraugiemMethodGetClient]];
+            client = user.valid ? user : nil;
         }
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             completionHandler(client, error);

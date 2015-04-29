@@ -7,12 +7,7 @@
 //  as published by Sam Hocevar. See http://www.wtfpl.net/ for more details.
 //
 
-#import <Foundation/Foundation.h>
-
-/**
- @abstract Draugiem Identificator.
- */
-typedef long long DRId;
+#import "DRObject.h"
 
 /**
  @abstract Draugiem user type.
@@ -80,12 +75,7 @@ typedef NS_ENUM (NSUInteger, DRUserSex) {
 /**
  @abstract Represents a user on draugiem.lv.
  */
-@interface DRUser : NSObject
-
-/**
- @abstract The ID of the Draugiem user.
- */
-@property (nonatomic, readonly) DRId identificator;
+@interface DRUser : DRObject
 
 /**
  @abstract The type of the Draugiem user.
