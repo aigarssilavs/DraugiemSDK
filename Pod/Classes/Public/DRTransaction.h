@@ -20,6 +20,6 @@
 /**
  @abstract Whether the transaction has been successfully completed.
  */
-@property (nonatomic) BOOL completed;
+@property (nonatomic, readonly) BOOL completed;
 
 @end

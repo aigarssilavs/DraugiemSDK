@@ -14,7 +14,6 @@
 		16CA5B53EF99A48EF76F3E9A /* DRUser.h in Headers */ = {isa = PBXBuildFile; fileRef = E1A49BB1C0F67864138010EA /* DRUser.h */; };
 		1D090C9CFD5105CC30D4B293 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE7C1CFAA0814F44005FCE82 /* UIKit.framework */; };
 		1FFC9E2B4D057E2EA0815FE1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3D444720EC46C35C134373E /* Foundation.framework */; };
-		220539E6CD62AA27FCFC0455 /* DRConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E2EC55B06C8D21C080C39D /* DRConstants.m */; };
 		26D00CABB52C629DDDAA1648 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE7C1CFAA0814F44005FCE82 /* UIKit.framework */; };
 		27AB1F681DEA79ED391394DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3D444720EC46C35C134373E /* Foundation.framework */; };
 		334EDDCFEDB6DF8B0A247E6E /* DRHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = B665909C72F170EC1A40D9B8 /* DRHelper.h */; };
@@ -24,7 +23,6 @@
 		528E5FB1777D3FD0351BCB57 /* DRTransaction.h in Headers */ = {isa = PBXBuildFile; fileRef = 055743C82491012B7A9C10E0 /* DRTransaction.h */; };
 		6E259AD3F485D52E65BCD863 /* DRTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 167DD3A24D4BB275648E0397 /* DRTransaction.m */; };
 		6E7D7560018E6B64EA0C0F54 /* DRUser.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B494AAD07CA989DF1EF90F /* DRUser.m */; };
-		75D1B41B551EB7A4242270AD /* DRConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E2EC55B06C8D21C080C39D /* DRConstants.m */; };
 		7A4DAF729F93B2442C501361 /* DRError.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F8BD5F9C64EAE2CF108BD2 /* DRError.m */; };
 		7D4C3215D4538BFE85C32AE2 /* DRConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 0051A949D7C17FD807901774 /* DRConstants.h */; };
 		88A1DAB86A965D99A776F739 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3D444720EC46C35C134373E /* Foundation.framework */; };
@@ -95,7 +93,6 @@
 		4CB3AC064D350497D9F8453E /* DraugiemSDK.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DraugiemSDK.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		50F8BD5F9C64EAE2CF108BD2 /* DRError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DRError.m; sourceTree = "<group>"; };
 		6EFF651644283379AD5263EE /* libPods-DraugiemSDK-DraugiemSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DraugiemSDK-DraugiemSDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		73E2EC55B06C8D21C080C39D /* DRConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DRConstants.m; sourceTree = "<group>"; };
 		7489EC109300779022B5F09A /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		76C9A67262C684FFF7B2B325 /* DraugiemSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DraugiemSDK.h; sourceTree = "<group>"; };
 		7A8FBC3A9F141C919CE00BF3 /* libPods-Tests-DraugiemSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests-DraugiemSDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -309,7 +306,6 @@
 			isa = PBXGroup;
 			children = (
 				0051A949D7C17FD807901774 /* DRConstants.h */,
-				73E2EC55B06C8D21C080C39D /* DRConstants.m */,
 				055743C82491012B7A9C10E0 /* DRTransaction.h */,
 				167DD3A24D4BB275648E0397 /* DRTransaction.m */,
 				E1A49BB1C0F67864138010EA /* DRUser.h */,
@@ -532,7 +528,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75D1B41B551EB7A4242270AD /* DRConstants.m in Sources */,
 				7A4DAF729F93B2442C501361 /* DRError.m in Sources */,
 				A4FE41040E5246AB85511CE4 /* DRHelper.m in Sources */,
 				6E259AD3F485D52E65BCD863 /* DRTransaction.m in Sources */,
@@ -561,7 +556,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				220539E6CD62AA27FCFC0455 /* DRConstants.m in Sources */,
 				E2180003F2E9CA37D920EDAB /* DRError.m in Sources */,
 				C07461B7AD1D92BA558DD232 /* DRHelper.m in Sources */,
 				ACA3395506E6E799F9B3A11E /* DRTransaction.m in Sources */,

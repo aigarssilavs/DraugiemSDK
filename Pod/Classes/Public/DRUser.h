@@ -140,13 +140,13 @@ typedef NS_ENUM (NSUInteger, DRUserSex) {
  @param identificator A valid Draugiem user ID.
  @return An initialized DRUser instance.
  */
-- (id) initWithIdentificator: (DRId) identificator;
+- (id)initWithIdentificator:(DRId)identificator;
 
 /**
  @abstract Creates a Draugiem user object from the dictionary of Draugiem API JSON response.
  @param dictionary A parsed dictionary of a single Draugiem user API JSON response.
  @return An initialized DRUser instance.
  */
-- (id) initWithJSONDictionary: (NSDictionary *) dictionary;
+- (id)initWithJSONDictionary:(NSDictionary *)dictionary;
 
 @end

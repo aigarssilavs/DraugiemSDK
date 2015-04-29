@@ -16,15 +16,15 @@
     return [self initWithJSONDictionary:nil];
 }
 
-- (id) initWithIdentificator: (DRId) identificator
+- (id)initWithIdentificator:(DRId)identificator
 {
-    if(self = [super init]) {
+    if (self = [super init]) {
         _identificator = identificator;
     }
     return self;
 }
 
-- (id) initWithJSONDictionary: (NSDictionary *) dictionary
+- (id)initWithJSONDictionary:(NSDictionary *)dictionary
 {
     if (self = [super init]) {
         
@@ -52,7 +52,7 @@
     return self;
 }
 
-- (DRUserType) type
+- (DRUserType)type
 {
     if (self.identificator > 10000000) {
         /*

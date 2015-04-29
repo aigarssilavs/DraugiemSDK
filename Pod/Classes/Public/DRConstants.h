@@ -9,6 +9,8 @@
 
 #import <Foundation/Foundation.h>
 
+//This file contains public constants
+
 static NSString *const kErrorDomainDraugiemSDK = @"lv.draugiem.sdk";
 
 /**
@@ -38,32 +40,25 @@ typedef NS_ENUM(NSInteger, DRErrorCode) {
      */
     DRErrorInvalidAppKey = 1<<16 | 4,
     /**
+     @abstract Invalid or no apiKey available to DraugiemSDK. No user is currently logged in.
+     */
+    DRErrorInvalidApiKey = 1<<16 | 5,
+    /**
      @abstract Invalid or no url scheme specified in the .plist file of your project. URL scheme has to match 'dr'+15XXXXXX.
      */
-    DRErrorInvalidURLScheme = 1<<16 | 5,
+    DRErrorInvalidURLScheme = 1<<16 | 6,
     /**
      @abstract Invalid request. Will not be sent to Draugiem API.
      @note This is an internal error.
      */
-    DRErrorInvalidRequest = 1<<16 | 6,
+    DRErrorInvalidRequest = 1<<16 | 7,
     /**
      @abstract Invalid response received from Draugiem app, Draugiem web or Draugiem API.
      @note This is an internal error. The same operation may complete successfully if called again.
      */
-    DRErrorInvalidResponse = 1<<16 | 7,
+    DRErrorInvalidResponse = 1<<16 | 8,
     /**
-     @abstract Error received in JSON from Draugiem API. There are no error codes - only messages. Refer to userInfo for more details.
+     @abstract Error messagge received without error code. Refer to userInfo for more details.
      */
     DRErrorDynamic = 1<<17
 };
-
-/*
- const AUTH_INVALID_PARAMS_ERROR = 101;
- const AUTH_INVALID_APP_ERROR = 102;
- const AUTH_INVALID_HASH_ERROR = 103;
- const AUTH_FAILED_CREATING_KEY_ERROR = 104;
- */
-
-@interface DRConstants : NSObject
-
-@end

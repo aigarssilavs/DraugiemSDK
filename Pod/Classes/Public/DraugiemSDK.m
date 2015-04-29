@@ -91,7 +91,7 @@
 
 - (void)processCallback:(NSURL *)url
 {
-    NSLog(@"Action response: %@", url.absoluteString);
+    if (Draugiem.logRequests) NSLog(@"Draugiem action callback: %@", url.absoluteString);
     
     id object = nil;
     NSError *error = nil;
@@ -127,9 +127,13 @@
         error = nil;
     }
     
+    if (!object && !error) {
+        error = [DRError errorWithCode:DRErrorUnknown];
+    }
+    
     if (_pendingActionCompletionHandler) {
         _pendingActionCompletionHandler(object, error);
-        _pendingActionCompletionHandler = nil;
+        _pendingActionCompletionHandler = NULL;
     }
     _pendingAction = nil;
     
@@ -210,7 +214,9 @@
             _observer = [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationDidBecomeActiveNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^ (NSNotification *notification) {
                 [self applicationDidBecomeActive:notification];
             }];
-            NSLog(@"Action request: %@",url.absoluteString);
+            
+            if (Draugiem.logRequests) NSLog(@"Draugiem action request: %@",url.absoluteString);
+            
             [[UIApplication sharedApplication] openURL:url];
             //No errors encountered. openURL and return from function.
             //Response should be handled in [[DraugiemSDK sharedInstance] openURL:sourceApplication:]
@@ -224,7 +230,7 @@
     
     //Error has been encountered along the way.
     _pendingActionCompletionHandler(nil, [DRError errorWithCode:errorCode]);
-    _pendingActionCompletionHandler = nil;
+    _pendingActionCompletionHandler = NULL;
     _pendingAction = nil;
 }
 
@@ -240,7 +246,7 @@
     
     if (_pendingActionCompletionHandler) {
         _pendingActionCompletionHandler(nil, [DRError errorWithCode:DRErrorInterrupt]);
-        _pendingActionCompletionHandler = nil;
+        _pendingActionCompletionHandler = NULL;
     }
     _pendingAction = nil;
 }
@@ -266,7 +272,9 @@
     [request setHTTPBody:data];
     [request setTimeoutInterval:kDraugiemRequestTimeout];
     
-    NSLog(@"API request: %@?data=%@", kDraugiemNativeApiURL, [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+    if (Draugiem.logRequests) NSLog(@"Draugiem API request: %@?data=%@",
+                                    kDraugiemNativeApiURL,
+                                    [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
     
     return request;
 }
@@ -295,7 +303,7 @@
         error = [DRError errorWithCode:DRErrorInvalidAppKey];
     }
     if (_apiKey.length != kDraugiemKeyLength && !error) {
-        error = [DRError errorWithCode:DRErrorInvalidAppKey];
+        error = [DRError errorWithCode:DRErrorInvalidApiKey];
     }
     
     if (error) {

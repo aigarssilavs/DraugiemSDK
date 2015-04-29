@@ -49,6 +49,12 @@
 @property (nonatomic, retain, readonly) NSString *apiKey;
 
 /**
+ @abstract Controls whether requests made and received by Draugiem SDK are logged in console. 
+ Used for debugging purposes. NO by default.
+ */
+@property (nonatomic) BOOL logRequests;
+
+/**
  @abstract Gets the singleton instance. You may use "Draugiem" macro in stead of "[DraugiemSDK sharedInstance]" for added convenience.
  */
 + (DraugiemSDK *)sharedInstance;

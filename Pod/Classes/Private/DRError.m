@@ -24,6 +24,10 @@
 
 + (NSError *)errorWithCode:(NSInteger)code message:(NSString *)message domain:(NSString *)domain
 {
+    if (code == DRErrorNone && message.length > 0 &&
+        (domain == kErrorDomainDraugiemSDK || domain == nil)) {
+        code = DRErrorDynamic;
+    }
     NSDictionary *userInfo = [self userInfoForErrorMessage:message];
     
     if (!userInfo) {
@@ -59,6 +63,9 @@
         case DRErrorInvalidAppKey:
             return @{NSLocalizedDescriptionKey: @"Invalid or absent appKey",
                      NSLocalizedRecoverySuggestionErrorKey: @"Assign your appKey to DraugiemSDK by calling [[DraugiemSDK sharedInstance] startWithAppID:appKey:] method."};
+        case DRErrorInvalidApiKey:
+            return @{NSLocalizedDescriptionKey: @"Invalid or absent apiKey",
+                     NSLocalizedRecoverySuggestionErrorKey: @"Api key is set on successful login. Use [[DraugiemSDK sharedInstance] logInWithCompletion:] method to log in."};
         case DRErrorInvalidURLScheme:
             return @{NSLocalizedDescriptionKey: @"Invalid or absent url scheme.",
                      NSLocalizedRecoverySuggestionErrorKey: @"Specify url scheme for your app in the .plist file of your project. The scheme should be your appID prefixed with 'dr'."};

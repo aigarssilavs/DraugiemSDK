@@ -18,7 +18,7 @@ Fill in the details. You should end up with something like this:
 
 Take note of your application ID (15019040 in example) and application API key (068411db50ed4d0de895d4405461f112 in example).
 
-**Warning:** Application ID is an 8 digit integer. If your application ID has less then 8 digits prepend "15" followed by appropriate number of zeros to it. For instance - if your appID was "19040" you shoud use "**150**19040" as the appID in DraugiemSDK.
+**Warning:** Application ID is an 8 digit integer. If your application ID has less than 8 digits, prepend "15" followed by appropriate number of zeros to it. For instance - if your appID was "19040" you shoud use "**150**19040" as the appID in DraugiemSDK.
 
 ### 1. Add DraugiemSDK to your Xcode project. 
 
