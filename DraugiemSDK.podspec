@@ -11,11 +11,12 @@ Pod::Spec.new do |s|
   s.name             = "DraugiemSDK"
   s.version          = "0.1.0"
   s.summary          = "Official Draugiem SDK for iOS."
-  s.description      = "The Draugiem SDK for iOS enables you to use Draugiem platform fetures, such as Draugiem passport login and payments."
+  s.description      = "The Draugiem SDK for iOS enables you to use Draugiem platform features, such as Draugiem authentication and payments."
   s.homepage         = "https://github.com/aigarssilavs/DraugiemSDK"
   s.license          = 'WTFPL'
   s.author           = { "Aigars Silavs" => "aigars.silavs@gmail.com" }
   s.source           = { :git => "https://github.com/aigarssilavs/DraugiemSDK.git", :tag => s.version.to_s }
+  s.social_media_url = 'https://draugiem.lv/aigarss'
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true

@@ -21,6 +21,11 @@
 + (NSString *)apiHash
 {
     NSString *input = [[DraugiemSDK sharedInstance].appKey stringByAppendingString:[self appURLScheme]];
+    NSString *apiKey = [DraugiemSDK sharedInstance].apiKey;
+    
+    if (apiKey.length == kDraugiemKeyLength) {
+        input = [input stringByAppendingString:apiKey];
+    }
     
     const char *cString = [input UTF8String];
     unsigned char result[CC_MD5_DIGEST_LENGTH];

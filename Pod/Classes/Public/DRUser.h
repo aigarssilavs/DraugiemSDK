@@ -19,37 +19,37 @@ typedef NS_ENUM (NSInteger, DRUserType) {
     DRUserTypeUnknown = -1,
     /**
      @abstract The default user type. User ir an individual.
-     @note https://www.draugiem.lv/aigarss
+     @note Example user: https://www.draugiem.lv/aigarss
      */
     DRUserTypeDefault = 0,
     /**
      @abstract Music user type. User is a musician or music producer.
-     @note https://www.draugiem.lv/pratavetra/
+     @note Example user: https://www.draugiem.lv/pratavetra/
      */
     DRUserTypeMusic = 1,
     /**
      @abstract Business user type. User is an enterprise.
-     @note http://www.draugiem.lv/draugiem.lv/
+     @note Example user: http://www.draugiem.lv/draugiem.lv/
      */
     DRUserTypeBusiness = 4,
     /**
      @abstract API user type. User is an application.
-     @note http://www.draugiem.lv/api_sandbox/
+     @note Example user: http://www.draugiem.lv/api_sandbox/
      */
     DRUserTypeAPI = 6,
     /**
      @abstract Group user type. User is a group of likeminded users.
-     @note https://www.draugiem.lv/group/16014072
+     @note Example user: https://www.draugiem.lv/group/16014072
      */
     DRUserTypeGroup = 7,
     /**
      @abstract Event user type. User is an event, for instance a concert or conference.
-     @note https://www.draugiem.lv/ev/18650178
+     @note Example user: https://www.draugiem.lv/ev/18650178
      */
     DRUserTypeEvent = 9,
     /**
      @abstract Movie user type. User is a movie.
-     @note https://www.draugiem.lv/kino/vella-kalpi-vella-dzirnavas
+     @note Example user: https://www.draugiem.lv/kino/vella-kalpi-vella-dzirnavas
      */
     DRUserTypeMovie = 10,
 };

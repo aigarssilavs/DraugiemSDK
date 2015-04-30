@@ -8,7 +8,6 @@
 //
 
 #import <UIKit/UIKit.h>
-
 #import "DraugiemSDK.h"
 #import "DRHelper.h"
 #import "DRError.h"
@@ -70,7 +69,8 @@
     
     // verify the URL is intended as a callback for the SDK's log in
     BOOL draugiemURL = [[url scheme] isEqualToString:[DRHelper appURLScheme]];
-    BOOL expectedSourceApplication = [sourceApplication hasPrefix:@"lv.draugiem"] || [sourceApplication hasPrefix:@"com.apple"];
+    BOOL expectedSourceApplication = ([sourceApplication hasPrefix:@"lv.draugiem"] ||
+                                      [sourceApplication hasPrefix:@"com.apple"]);
     
     if (draugiemURL && expectedSourceApplication) {
         
@@ -158,9 +158,15 @@
 
 - (void)buyItemWithID:(DRId)itemId completion:(void (^)(DRTransaction *transaction, NSError *error))completionHandler
 {
-    [self performAction:kDraugiemActionPurchase
-             parameters:@{kDraugiemQueryKeyPurchaseId:@(itemId)}
-             completion:completionHandler];
+    if (_apiKey.length != kDraugiemKeyLength) {
+        //nobody is logged in
+        completionHandler(nil, [DRError errorWithCode:DRErrorInvalidApiKey]);
+    } else {
+        [self performAction:kDraugiemActionPurchase
+                 parameters:@{kDraugiemQueryKeyPurchaseId:@(itemId)}
+                 completion:completionHandler];
+    }
+    
 }
 
 #pragma mark Direct API calls

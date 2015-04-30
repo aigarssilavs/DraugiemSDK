@@ -49,5 +49,4 @@ static CGFloat const kDraugiemRequestTimeout = 50.0f;
 + (NSString *)queryStringFromDictionary:(NSDictionary *)dictionary;
 + (NSDictionary *)dictFromQueryString:(NSString *)query;
 
-
 @end

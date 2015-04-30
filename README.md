@@ -14,7 +14,7 @@ Installation
 Navigate to [your draugiem developer page](https://www.draugiem.lv/applications/dev/myapps/) and create a new application.
 Fill in the details. You should end up with something like this:
 
-![App creation form](/Documents/appCreationForm.png)
+![App creation form](https://raw.githubusercontent.com/aigarssilavs/DraugiemSDK/master/Documents/appCreationForm.png)
 
 Take note of your application ID (15019040 in example) and application API key (068411db50ed4d0de895d4405461f112 in example).
 
@@ -33,7 +33,7 @@ pod "DraugiemSDK"
 
 Create an array key called URL types with a single array sub-item called URL Schemes in the .plist file of your project. Give this a single item with your app ID prefixed with 'dr'. The according fragment of finished .plist should look like this:
 
-![Plist fragment](/Documents/plistFragment.png)
+![Plist fragment](https://raw.githubusercontent.com/aigarssilavs/DraugiemSDK/master/Documents/plistFragment.png)
 
 This is used to ensure the application will receive a callback from native Draugiem iOS app or Safari web browser when performing external actions.
 
@@ -54,7 +54,7 @@ Assign your unique application id and application key to DraugiemSDK instance. W
 }
 ```
 
-Call [Draugiem openURL:sourceApplication:] method from the [UIApplicationDelegate application:openURL:sourceApplication:annotation:] method of the AppDelegate for your app. It should be invoked for the proper processing of responses during interaction with the native Draugiem app or Safari as part of SSO authorization flow or Draugiem dialogs.
+Call `[Draugiem openURL:sourceApplication:]` method from the `[UIApplicationDelegate application:openURL:sourceApplication:annotation:]` method of the AppDelegate for your app. It should be invoked for the proper processing of responses during interaction with the native Draugiem app or Safari as part of SSO authorization flow or Draugiem dialogs.
 
 ```objective-c
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
@@ -68,7 +68,7 @@ Call [Draugiem openURL:sourceApplication:] method from the [UIApplicationDelegat
 
 ### Authentication
 
-Authentication is a matter of single method call. 
+Authentication is a matter of single method call: 
 
 ```objective-c
 [Draugiem logInWithCompletion:^(NSString *apiKey, NSError *error) {
@@ -80,7 +80,7 @@ Authentication is a matter of single method call.
 }];
 ```
 
-If no errors are encountered, you may request user object of the current client. We refer to the user, that is currently logged in with DraugiemSDK as "client".
+If no errors are encountered, you may request user object of the current client. We refer to the user, that is currently logged in with DraugiemSDK as a `client`.
 
 ```objective-c
 [Draugiem clientWithCompletion:^(DRUser *client, NSError *error) {
@@ -92,9 +92,25 @@ If no errors are encountered, you may request user object of the current client.
 }];
 ```
 
+### Payment
+
+Buying a draugiem.lv item is very simple:
+
+```objective-c
+[Draugiem buyItemWithID:yourItemId completion:^(DRTransaction *transaction, NSError *error) {
+    if (transaction.completed) {
+        //Transaction was completed. You may use transaction identificator, if you need it.
+    } else {
+        //Transaction was not completed. Refer to the error object for more information.
+    }
+}];
+```
+
+Note, that transaction object may be returned even if the transaction was not completed. You may use transaction identificator, regardless of the `completed` property, if you have a use for it.
+
 Appendix
 ===============
 
-**Help:** Refer to the example project provided in [this repo](https://github.com/aigarssilavs/DraugiemSDK/tree/master/Example) and [draugiem developer portal](https://www.draugiem.lv/applications/dev/) for more information.
+**Help:** Refer to the example project provided in [this repo](https://github.com/aigarssilavs/DraugiemSDK/tree/master/Example) and [draugiem developer portal](https://www.draugiem.lv/applications/dev/) for more information. To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 **License:** DraugiemSDK is available under the WTFPL license. See the [LICENSE](https://github.com/aigarssilavs/DraugiemSDK/blob/master/LICENSE) file for more info.

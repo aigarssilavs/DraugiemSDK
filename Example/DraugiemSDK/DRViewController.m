@@ -66,7 +66,7 @@
             //Client data was received.
             self.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:client.imageLargeURL]];
             self.textView.text = [client.title stringByAppendingFormat:@".%@ %@.",
-                                  client.age != 0 ? [NSString stringWithFormat:@" %@ year old", @(client.age)] : @"",
+                                  client.age != 0 ? [NSString stringWithFormat:@" %@ year old", @(client.age)] : @"??",
                                   client.sex == DRUserSexFemale ? @"female" :
                                   client.sex == DRUserSexMale ? @"male" : @"individual of unkonwn gender"];
         } else {
@@ -79,7 +79,12 @@
 
 - (IBAction)buyItemButtonTapped:(UIButton *)sender
 {
-    DRId demoItemId = 0;
+    /*
+     You may call this method when Draugiem.apiKey is set (after a successful login).
+     In order to add payments to your application, contact api@draugiem.lv.
+     Once your draugiem.lv application has paid products (items), you can use their IDs, to purchase them from your iOS app.
+     */
+    const DRId demoItemId = 1;
     [Draugiem buyItemWithID:demoItemId completion:^(DRTransaction *transaction, NSError *error) {
         if (transaction) {
             //Transaction was created, but not necessarilly completed. Refer to the "completed" property.
@@ -109,6 +114,5 @@
                           Draugiem.appKey,
                           Draugiem.apiKey];
 }
-
 
 @end
