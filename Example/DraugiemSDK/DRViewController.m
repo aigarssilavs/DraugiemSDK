@@ -22,15 +22,11 @@
 - (IBAction)logInButtonTapped:(UIButton *)sender
 {
     /*
-     Draugiem iOS app or Safari with mobile draugiem web will be opened. If the user allows your app to access their account,
-     the SDK will return users apiKey in completion handler. From that moment on the api key will also be accessible through
-     DraugiemSDK shared instance.
+     Draugiem iOS app or Safari with mobile draugiem web will be opened. If the user allows your app to access their account, the SDK will return users apiKey in completion handler. From that moment on the api key will also be accessible through DraugiemSDK shared instance.
      
-     When the user has successfully authenticated you may use their apiKey for integrating with your own web backend as you see
-     fit. Note that apiKey may become invalid with time - if users password is changed for instance.
+     When the user has successfully authenticated you may use their apiKey for integrating with your own web backend as you see fit. Note that apiKey may become invalid with time - if users password is changed for instance.
      
-     In most cases you will need additional information about user, that has authenticated - his/her name, age, gender and so on.
-     To obtain this information call [Draugiem clientWithCompletion:] method when login has successfully completed.
+     In most cases you will need additional information about user, that has authenticated - his/her name, age, gender and so on. To obtain this information call [Draugiem clientWithCompletion:] method when login has successfully completed.
      
      To avoid confusion, the user that has authenticated with Draugiem SDK is refered to as "client".
      */

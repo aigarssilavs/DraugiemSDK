@@ -7,6 +7,7 @@
 //  as published by Sam Hocevar. See http://www.wtfpl.net/ for more details.
 //
 
+#import <UIKit/UIKit.h>
 #import <CommonCrypto/CommonDigest.h>
 #import "DRHelper.h"
 #import "DraugiemSDK.h"

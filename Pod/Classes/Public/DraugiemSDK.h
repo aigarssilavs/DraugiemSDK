@@ -97,7 +97,7 @@
 /**
  @abstract Attempts to purchase an item with the specified ID for the current client.
  @note In order to add payments to your application, contact api@draugiem.lv.
- @param completionHandler the handler that will be invoked on completion. The apiKey is nil on failure.
+ @param completionHandler the handler that will be invoked on completion. The transaction is nil on failure.
  @warning transaction object may be returned even if it wasn't completed. Refer to the "completed" property, in order to verify that the purchase was completed.
  */
 - (void)buyItemWithID:(DRId)itemId completion:(void (^)(DRTransaction *transaction, NSError *error))completionHandler;
@@ -105,7 +105,7 @@
 #pragma mark Direct API calls
 
 /**
- @abstract Requests details for the client, that is currently authorized with DraugiemSDK.
+ @abstract Requests details for the client, that is currently authorized with DraugiemSDK via \c logInWithCompletion method.
  @param completionHandler the handler that will be invoked on completion. The user is nil on failure.
  */
 - (void)clientWithCompletion:(void (^)(DRUser *client, NSError *error))completionHandler;
