@@ -10,18 +10,18 @@
 #import "DRObject.h"
 
 /**
- @abstract Represents a draugiem.lv transaction.
+ @brief Represents a draugiem.lv transaction.
  @note The fact that transaction exists, doesn't automatically mean that it was completed. Refer to the 'completed'property.
  */
 @interface DRTransaction : DRObject
 
 /**
- @abstract Whether the transaction has been successfully completed.
+ @brief Whether the transaction has been successfully completed.
  */
 @property (nonatomic, readonly) BOOL completed;
 
 /**
- @abstract Creates a Draugiem transaction object from the dictionary of Draugiem app or web response.
+ @brief Creates a Draugiem transaction object from the dictionary of Draugiem app or web response.
  @param dictionary A parsed dictionary of a single Draugiem transaction response.
  @return An initialized DRTransaction instance.
  */

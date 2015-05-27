@@ -10,12 +10,12 @@
 #import <Foundation/Foundation.h>
 
 /**
- @abstract Draugiem Identificator.
+ @brief Draugiem Identificator.
  */
 typedef long long DRId;
 
 /**
- @abstract Abstract Draugiem object class. Subclasses of DRObject represent draugiem objects returned by DraugiemSDK method calls.
+ @brief Abstract Draugiem object class. Subclasses of DRObject represent draugiem objects returned by DraugiemSDK method calls.
  @warning Don't use it without subclassing it.
  */
 @interface DRObject : NSObject
@@ -24,13 +24,13 @@ typedef long long DRId;
 }
 
 /**
- @abstract Whether the current instance is valid. 
+ @brief Whether the current instance is valid. 
  @note In most cases instance of DRObject subclass is considered valid if it has a non-zero identificator.
  */
 @property (nonatomic, readonly) BOOL valid;
 
 /**
- @abstract The ID of the Draugiem object.
+ @brief The ID of the Draugiem object.
  */
 @property (nonatomic, readonly) DRId identificator;
 

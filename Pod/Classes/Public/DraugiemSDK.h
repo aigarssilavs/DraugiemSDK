@@ -16,7 +16,7 @@
 #define Draugiem [DraugiemSDK sharedInstance]
 
 /**
- @abstract DraugiemSDK provides methods for integrating with draugiem.lv.
+ @brief DraugiemSDK provides methods for integrating with draugiem.lv.
  @discussion You should always use the shared instance when working with the SDK.
  
  All DraugiemSDK methods require appKey and appID properties to be set to valid values.
@@ -30,37 +30,37 @@
 #pragma mark Setup
 
 /**
- @abstract The application ID.
+ @brief The application ID.
  Set with [[DraugiemSDK sharedInstance] startWithAppID:appKey:] method.
  */
 @property (nonatomic, readonly) DRId appID;
 
 /**
- @abstract The application API key.
+ @brief The application API key.
  Set with [[DraugiemSDK sharedInstance] startWithAppID:appKey:] method.
  */
 @property (nonatomic, retain, readonly) NSString *appKey;
 
 /**
- @abstract API key of client (user), that is currently authorized.
+ @brief API key of client (user), that is currently authorized.
  Set on successful completion of [[DraugiemSDK sharedInstance] authorizeWithCompletion:] method.
  If no user is currently authorized with DraugeimSDK this property is nil.
  */
 @property (nonatomic, retain, readonly) NSString *apiKey;
 
 /**
- @abstract Controls whether requests made and received by Draugiem SDK are logged in console. 
+ @brief Controls whether requests made and received by Draugiem SDK are logged in console. 
  Used for debugging purposes. NO by default.
  */
 @property (nonatomic) BOOL logRequests;
 
 /**
- @abstract Gets the singleton instance. You may use "Draugiem" macro in stead of "[DraugiemSDK sharedInstance]" for added convenience.
+ @brief Gets the singleton instance. You may use "Draugiem" macro in stead of "[DraugiemSDK sharedInstance]" for added convenience.
  */
 + (DraugiemSDK *)sharedInstance;
 
 /**
- @abstract Sets appId and appKey properties, if they appear to be valid.
+ @brief Sets appId and appKey properties, if they appear to be valid.
  @warning nil may be returned even if appID, appKey or both of them are invalid. This method only performs initial check locally.
  @warning If your appID isn't an 8 digit integer - refer to error returned by this method or alert displayed by this method to obtain a valid appID.
  @param appID The application ID.
@@ -70,7 +70,7 @@
 - (NSError *)startWithAppID:(DRId)appID appKey:(NSString *)appKey;
 
 /**
- @abstract Call this method from the [UIApplicationDelegate application:openURL:sourceApplication:annotation:] method
+ @brief Call this method from the [UIApplicationDelegate application:openURL:sourceApplication:annotation:] method
  of the AppDelegate for your app. It should be invoked for the proper processing of responses during interaction
  with the native Draugiem app or Safari as part of SSO authorization flow or Draugiem dialogs.
  @param url The URL as passed to [UIApplicationDelegate application:openURL:sourceApplication:annotation:].
@@ -82,7 +82,7 @@
 #pragma mark External actions (Temporarily exits current app)
 
 /**
- @abstract Requests access to Draugiem account.
+ @brief Requests access to Draugiem account.
  @note apiKey of DraugiemSDK shared instance will be set on successful completion of this method.
  @param completionHandler the handler that will be invoked on completion. The apiKey is nil on failure.
  @warning [[DraugiemSDK sharedInstance] openURL:sourceApplication:] has to be called from [UIApplicationDelegate application:openURL:sourceApplication:annotation:] method, in order for this method to function.
@@ -90,12 +90,12 @@
 - (void)logInWithCompletion:(void (^)(NSString *apiKey, NSError *error))completionHandler;
 
 /**
- @abstract Deletes the local Draugiem client apiKey. This will not void the permissions granted to your app by the user.
+ @brief Deletes the local Draugiem client apiKey. This will not void the permissions granted to your app by the user.
  */
 - (void)logOut;
 
 /**
- @abstract Attempts to purchase an item with the specified ID for the current client.
+ @brief Attempts to purchase an item with the specified ID for the current client.
  @note In order to add payments to your application, contact api@draugiem.lv.
  @param completionHandler the handler that will be invoked on completion. The transaction is nil on failure.
  @warning transaction object may be returned even if it wasn't completed. Refer to the "completed" property, in order to verify that the purchase was completed.
@@ -105,7 +105,7 @@
 #pragma mark Direct API calls
 
 /**
- @abstract Requests details for the client, that is currently authorized with DraugiemSDK via \c logInWithCompletion method.
+ @brief Requests details for the client, that is currently authorized with DraugiemSDK via \c logInWithCompletion method.
  @param completionHandler the handler that will be invoked on completion. The user is nil on failure.
  */
 - (void)clientWithCompletion:(void (^)(DRUser *client, NSError *error))completionHandler;
