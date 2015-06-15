@@ -22,12 +22,7 @@ Take note of your application ID (15019040 in example) and application API key (
 
 ### 1. Add DraugiemSDK to your Xcode project. 
 
-If you are using git for version control in your app, you may add this repo as a submodule to yours to make it easier to get future updates. DraugiemSDK is also available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod "DraugiemSDK"
-```
+If you are using git for version control in your app, you may add this repo as a submodule to yours to make it easier to get future updates. You may also downlaod this repo and add the SDK files to your project manually.
 
 ### 2. Configure your Xcode Project
 
@@ -91,22 +86,6 @@ If no errors are encountered, you may request user object of the current client.
     }
 }];
 ```
-
-### Payment
-
-Buying a draugiem.lv item is very simple:
-
-```objective-c
-[Draugiem buyItemWithID:yourItemId completion:^(DRTransaction *transaction, NSError *error) {
-    if (transaction.completed) {
-        //Transaction was completed. You may use transaction identificator, if you need it.
-    } else {
-        //Transaction was not completed. Refer to the error object for more information.
-    }
-}];
-```
-
-Note, that transaction object may be returned even if the transaction was not completed. You may use transaction identificator, regardless of the `completed` property, if you have a use for it.
 
 Appendix
 ===============
