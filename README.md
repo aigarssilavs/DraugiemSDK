@@ -22,7 +22,7 @@ Take note of your application ID (15019040 in example) and application API key (
 
 ### 1. Add DraugiemSDK to your Xcode project. 
 
-If you are using git for version control in your app, you may add this repo as a submodule to yours to make it easier to get future updates. You may also downlaod this repo and add the SDK files to your project manually.
+If you are using git for version control in your app, you may add this repo as a submodule to yours to make it easier to get future updates. You may also download this repo and add the SDK files to your project manually. Installation using cocoapods is not supported at this time.
 
 ### 2. Configure your Xcode Project
 
