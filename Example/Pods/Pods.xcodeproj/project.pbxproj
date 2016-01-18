@@ -8,12 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		01AFC4408C861C7F95E5FF30 /* DRHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A10C0069F4E626B6F3FDFA79 /* DRHelper.m */; };
-		0904B97BC732311A1FC0338A /* DRTransaction.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F5223ABAA76EE81DBC4719D /* DRTransaction.h */; };
-		149960CAD6D8B394885FD6C5 /* DRTransaction.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F5223ABAA76EE81DBC4719D /* DRTransaction.h */; };
 		155A43BF3CF4AC994E522837 /* Pods-DraugiemSDK-DraugiemSDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F759067E3B5A334A1F841F /* Pods-DraugiemSDK-DraugiemSDK-dummy.m */; };
+		2CE461311C4CFCE0007AA0FC /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE461301C4CFCE0007AA0FC /* SafariServices.framework */; };
+		2CE461331C4CFCF6007AA0FC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE461321C4CFCF6007AA0FC /* UIKit.framework */; };
 		31E24BB23A8C650C8015AC60 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FDE934C3407B07F2F14CCD /* UIKit.framework */; };
 		38ADA3194450067258B327E2 /* DRUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FB4B95DA0E17EE822A76064 /* DRUser.h */; };
-		3A59F5B8BDAA49ABBCFBBEB0 /* DRTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D4A791756A6E0D8ADDEE5B /* DRTransaction.m */; };
 		426C9594857934DB5598B977 /* Pods-Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 03835FA8C7A212DA1DF678AC /* Pods-Tests-dummy.m */; };
 		458B150D42CBEC70217E51A6 /* DRUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FB4B95DA0E17EE822A76064 /* DRUser.h */; };
 		4D9D36974C2968290FBCE0E5 /* DRUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE13EC53F934F7C5177A3A2 /* DRUser.m */; };
@@ -39,7 +38,6 @@
 		D4DA22BB93D0D9B3F232091D /* DRObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 17D2B4204A337136AE9B5E73 /* DRObject.h */; };
 		D56328C02218CEA466A46F98 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C2CF4CF732514B99AA1858 /* Foundation.framework */; };
 		DC3D86C35837BF9FE3DAE0E5 /* DRConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 5014358B6EB108B6A89F84B2 /* DRConstants.h */; };
-		DD405940D028DF28172A26AD /* DRTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D4A791756A6E0D8ADDEE5B /* DRTransaction.m */; };
 		E585DB7A4B11E92C254CF396 /* DRHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A10C0069F4E626B6F3FDFA79 /* DRHelper.m */; };
 		F640161798CC4B2A2E59FE07 /* DRError.h in Headers */ = {isa = PBXBuildFile; fileRef = BCA23A7635702FC8EAFD8217 /* DRError.h */; };
 		F997ECF91297BE008A950B5C /* Pods-DraugiemSDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B4FBDFFC1FF3992D80803D /* Pods-DraugiemSDK-dummy.m */; };
@@ -87,6 +85,8 @@
 		15E3B198C3753DEC146F8308 /* Pods-DraugiemSDK-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DraugiemSDK-acknowledgements.plist"; sourceTree = "<group>"; };
 		17D2B4204A337136AE9B5E73 /* DRObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DRObject.h; sourceTree = "<group>"; };
 		2181033F062790EA60A06064 /* libPods-Tests-DraugiemSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests-DraugiemSDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CE461301C4CFCE0007AA0FC /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/SafariServices.framework; sourceTree = DEVELOPER_DIR; };
+		2CE461321C4CFCF6007AA0FC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		31F759067E3B5A334A1F841F /* Pods-DraugiemSDK-DraugiemSDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DraugiemSDK-DraugiemSDK-dummy.m"; sourceTree = "<group>"; };
 		329DF9440BA0836B13DE9CFE /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		346FBF277748833BA363632F /* DraugiemSDK.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DraugiemSDK.m; sourceTree = "<group>"; };
@@ -99,13 +99,11 @@
 		5E477B627E888308C9DC53B3 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		65FDE934C3407B07F2F14CCD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		694AFD216E5C9BA5F008E5E1 /* DraugiemSDK.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DraugiemSDK.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		6F5223ABAA76EE81DBC4719D /* DRTransaction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DRTransaction.h; sourceTree = "<group>"; };
 		722C0EB221202E24FCC29973 /* libPods-DraugiemSDK-DraugiemSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DraugiemSDK-DraugiemSDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76901E1481A99D3B8DB8E057 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		7DED9C0C7E9D72B6AF9542B1 /* Pods-DraugiemSDK-DraugiemSDK-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DraugiemSDK-DraugiemSDK-Private.xcconfig"; sourceTree = "<group>"; };
 		8DA1791F0C67E24F4AFEC521 /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		901C5A955FBCD54EFCF64CDB /* Pods-Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		90D4A791756A6E0D8ADDEE5B /* DRTransaction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DRTransaction.m; sourceTree = "<group>"; };
 		9DCABE67DDEB883145289DA9 /* Pods-Tests-DraugiemSDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-Tests-DraugiemSDK-dummy.m"; path = "../Pods-Tests-DraugiemSDK/Pods-Tests-DraugiemSDK-dummy.m"; sourceTree = "<group>"; };
 		A10C0069F4E626B6F3FDFA79 /* DRHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DRHelper.m; sourceTree = "<group>"; };
 		AD9A7416D80980F3FF2772FA /* Pods-DraugiemSDK-DraugiemSDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DraugiemSDK-DraugiemSDK.xcconfig"; sourceTree = "<group>"; };
@@ -128,6 +126,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CE461331C4CFCF6007AA0FC /* UIKit.framework in Frameworks */,
+				2CE461311C4CFCE0007AA0FC /* SafariServices.framework in Frameworks */,
 				D56328C02218CEA466A46F98 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,8 +259,6 @@
 				5014358B6EB108B6A89F84B2 /* DRConstants.h */,
 				17D2B4204A337136AE9B5E73 /* DRObject.h */,
 				04178E220153B99716C92705 /* DRObject.m */,
-				6F5223ABAA76EE81DBC4719D /* DRTransaction.h */,
-				90D4A791756A6E0D8ADDEE5B /* DRTransaction.m */,
 				4FB4B95DA0E17EE822A76064 /* DRUser.h */,
 				5CE13EC53F934F7C5177A3A2 /* DRUser.m */,
 				F533D4A31A3BEA8CE06F7FAE /* DraugiemSDK.h */,
@@ -304,6 +302,8 @@
 		E5BEB2BBBADFCF2C0E9629EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2CE461321C4CFCF6007AA0FC /* UIKit.framework */,
+				2CE461301C4CFCE0007AA0FC /* SafariServices.framework */,
 				2153BBE2B4525A56197CDC94 /* iOS */,
 			);
 			name = Frameworks;
@@ -344,7 +344,6 @@
 				7DAF45DF1E8BBAE4DE9395E1 /* DRError.h in Headers */,
 				BDEB9CB3E10ADF4D12384C62 /* DRHelper.h in Headers */,
 				D4DA22BB93D0D9B3F232091D /* DRObject.h in Headers */,
-				0904B97BC732311A1FC0338A /* DRTransaction.h in Headers */,
 				458B150D42CBEC70217E51A6 /* DRUser.h in Headers */,
 				9C045199E3F2CCE142249B1F /* DraugiemSDK.h in Headers */,
 			);
@@ -358,7 +357,6 @@
 				F640161798CC4B2A2E59FE07 /* DRError.h in Headers */,
 				AACD213065A9237F74A78F7F /* DRHelper.h in Headers */,
 				7975B88FDFA939368FE9646D /* DRObject.h in Headers */,
-				149960CAD6D8B394885FD6C5 /* DRTransaction.h in Headers */,
 				38ADA3194450067258B327E2 /* DRUser.h in Headers */,
 				97C4D1A3B518F4DB048E9A6A /* DraugiemSDK.h in Headers */,
 			);
@@ -533,7 +531,6 @@
 				8B010B4EB2FA8A6AABAC1BD9 /* DRError.m in Sources */,
 				01AFC4408C861C7F95E5FF30 /* DRHelper.m in Sources */,
 				CDEFA49000FC5292AC75EAB4 /* DRObject.m in Sources */,
-				3A59F5B8BDAA49ABBCFBBEB0 /* DRTransaction.m in Sources */,
 				4D9D36974C2968290FBCE0E5 /* DRUser.m in Sources */,
 				6C54B00B27DBB290436CF5DA /* DraugiemSDK.m in Sources */,
 				155A43BF3CF4AC994E522837 /* Pods-DraugiemSDK-DraugiemSDK-dummy.m in Sources */,
@@ -570,7 +567,6 @@
 				8504FE7412DFF45FA8A9234E /* DRError.m in Sources */,
 				E585DB7A4B11E92C254CF396 /* DRHelper.m in Sources */,
 				B5907BA1BE9AC6EC5BE98263 /* DRObject.m in Sources */,
-				DD405940D028DF28172A26AD /* DRTransaction.m in Sources */,
 				77102D9B4EE3978B03AF46EE /* DRUser.m in Sources */,
 				8A8E476F25FC4F38B33908A2 /* DraugiemSDK.m in Sources */,
 				5BBB3EF08B4135829FF11752 /* Pods-Tests-DraugiemSDK-dummy.m in Sources */,

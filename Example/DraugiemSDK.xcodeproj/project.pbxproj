@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C5C661C1C4D2B790040AB99 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C661B1C4D2B790040AB99 /* KeychainItemWrapper.m */; };
 		52AC7738EF7FC26C965AEAE9 /* libPods-DraugiemSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8419BFB0ED1995F4AE06E4 /* libPods-DraugiemSDK.a */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -38,6 +39,8 @@
 /* Begin PBXFileReference section */
 		0EB64F9F1818EF058C7E3D87 /* Pods-DraugiemSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DraugiemSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DraugiemSDK/Pods-DraugiemSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		2A8419BFB0ED1995F4AE06E4 /* libPods-DraugiemSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DraugiemSDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C5C661A1C4D2B790040AB99 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		2C5C661B1C4D2B790040AB99 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		2D1DF73D3279A2E0CF4047B7 /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EC6E42002CE5C1F89E6F56D /* DraugiemSDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = DraugiemSDK.podspec; path = ../DraugiemSDK.podspec; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* DraugiemSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DraugiemSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +138,8 @@
 				6003F59F195388D20070C39A /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* DRViewController.h */,
 				6003F5A6195388D20070C39A /* DRViewController.m */,
+				2C5C661A1C4D2B790040AB99 /* KeychainItemWrapper.h */,
+				2C5C661B1C4D2B790040AB99 /* KeychainItemWrapper.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
@@ -244,6 +249,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Aigars Silavs";
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = V7X89GG36Z;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -357,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C5C661C1C4D2B790040AB99 /* KeychainItemWrapper.m in Sources */,
 				6003F59E195388D20070C39A /* DRAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* DRViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
@@ -487,11 +496,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DraugiemSDK/DraugiemSDK-Prefix.pch";
 				INFOPLIST_FILE = "DraugiemSDK/DraugiemSDK-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -503,11 +515,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DraugiemSDK/DraugiemSDK-Prefix.pch";
 				INFOPLIST_FILE = "DraugiemSDK/DraugiemSDK-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

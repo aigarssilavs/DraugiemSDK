@@ -9,6 +9,9 @@
 
 #import "DRViewController.h"
 #import "DraugiemSDK.h"
+#import "KeychainItemWrapper.h"
+
+#define KEYCHAIN_API_KEY_IDENTIFIER @"draugiemApiKey"
 
 @interface DRViewController ()
 
@@ -18,6 +21,8 @@
 @end
 
 @implementation DRViewController
+
+#pragma mark - Button actions
 
 - (IBAction)logInButtonTapped:(UIButton *)sender
 {
@@ -34,6 +39,9 @@
         if (apiKey) {
             //Log in was successful.
             self.textView.text = [NSString stringWithFormat:@"API key: %@\n\nClient data may be requested now.", apiKey];
+            
+            //It is recommended to save the api key on disc or cloud, and restore it after app restart.
+            [self saveApiKey:apiKey];
         } else {
             //Log in was unccessful. Refer to error for details.
             self.textView.text = [NSString stringWithFormat:@"%@", error];
@@ -50,6 +58,7 @@
     [Draugiem logOut];
     self.imageView.image = nil;
     self.textView.text = nil;
+    [self deleteApiKey];
 }
 
 - (IBAction)getClientButtonTapped:(UIButton *)sender
@@ -63,8 +72,8 @@
             self.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:client.imageLargeURL]];
             self.textView.text = [client.title stringByAppendingFormat:@".%@ %@.",
                                   client.age != 0 ? [NSString stringWithFormat:@" %@ year old", @(client.age)] : @"??",
-                                  client.sex == DRUserSexFemale ? @"female" :
-                                  client.sex == DRUserSexMale ? @"male" : @"individual of unkonwn gender"];
+                                  client.sex == DRUserSexFemale ? @"woman" :
+                                  client.sex == DRUserSexMale ? @"man" : @"individual of unkonwn gender"];
         } else {
             //Something went wrong. Refer to error for details.
             self.imageView.image = nil;
@@ -73,22 +82,22 @@
     }];
 }
 
-- (IBAction)buyItemButtonTapped:(UIButton *)sender
+- (IBAction)restoreApiKeyButtonTapped:(UIButton *)sender
 {
     /*
-     You may call this method when Draugiem.apiKey is set (after a successful login).
-     In order to add payments to your application, contact api@draugiem.lv.
-     Once your draugiem.lv application has paid products (items), you can use their IDs, to purchase them from your iOS app.
+     After a successful login you should save the API key in local storage or in the cloud (whatever matches your needs) and restore it, when needed (typically on app startup), in stead of forcing the user to log in again.
      */
-    const DRId demoItemId = 1;
-    [Draugiem buyItemWithID:demoItemId completion:^(DRTransaction *transaction, NSError *error) {
-        if (transaction) {
-            //Transaction was created, but not necessarilly completed. Refer to the "completed" property.
-            self.textView.text = [NSString stringWithFormat:@"Transaction with id: %@ was%@ completed.",
-                                  @(transaction.identificator),
-                                  transaction.completed ? @"" : @"n't"];
+    
+    NSString *apiKey = [self savedApiKey];
+    
+    [Draugiem restoreApiKey:apiKey completion:^(BOOL success, NSError *error) {
+        
+        if (success) {
+            //Restoration of apiKey was successful.
+            self.textView.text = [NSString stringWithFormat:@"API key: %@\n\nClient data may be requested now.", Draugiem.apiKey];
+            
         } else {
-            //Something went wrong. Refer to error for details.
+            //Restoration of apiKey was unccessful. Refer to error for details.
             self.textView.text = [NSString stringWithFormat:@"%@", error];
         }
     }];
@@ -109,6 +118,45 @@
                           Draugiem.appID,
                           Draugiem.appKey,
                           Draugiem.apiKey];
+}
+
+#pragma mark - Saving & Loading API key
+
+/*
+ You may manage the API key however you see fit. We recommend saving the API key, after a successful login, so that the user wouldn't have to log in each time the app is restarted.
+ 
+ The most obvous options for preserving the apiKey are:
+ 1) Save it using keychain
+ 2) Save it using your web service.
+ 
+ We provide an example of saving, deleting and restoring it using keychain.
+ 
+ */
+
+- (void)saveApiKey:(NSString *)apiKey
+{
+    if (apiKey) {
+        KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:KEYCHAIN_API_KEY_IDENTIFIER accessGroup:nil];
+        [keychain setObject:apiKey forKey:(__bridge id)(kSecAttrAccount)];
+    }
+}
+
+- (void)deleteApiKey
+{
+    KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:KEYCHAIN_API_KEY_IDENTIFIER accessGroup:nil];
+    [keychain resetKeychainItem];
+}
+
+- (NSString *)savedApiKey
+{
+    KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:KEYCHAIN_API_KEY_IDENTIFIER accessGroup:nil];
+    NSString *apiKey = [keychain objectForKey:(__bridge id)(kSecAttrAccount)];
+    
+    if (apiKey.length > 0) {
+        return apiKey;
+    } else {
+        return nil;
+    }
 }
 
 @end

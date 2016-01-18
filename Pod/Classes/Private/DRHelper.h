@@ -16,21 +16,16 @@ static NSString *const kDraugiemNativeApiURL = @"https://m.draugiem.lv/api/";
 
 //External action names (opens draugiem app or web view)
 static NSString *const kDraugiemActionAuthorize = @"authorize";
-static NSString *const kDraugiemActionPurchase = @"purchase";
 
 //Internal method names (requests go directly to Draugiem API)
 static NSString *const kDraugiemMethodGetClient = @"users_client";
-
-//External action query keys
-static NSString *const kDraugiemQueryKeyPurchaseId = @"purchase_id";
+static NSString *const kDraugiemMethodValidateApiKey = @"validate_api_key";
 
 //External action callback query keys
 static NSString *const kDraugiemQueryKeyErrorDomain = @"error_domain";
 static NSString *const kDraugiemQueryKeyErrorCode = @"error_code";
 static NSString *const kDraugiemQueryKeyErrorMessage = @"error";
 static NSString *const kDraugiemQueryKeyApiKey = @"api_key";
-static NSString *const kDraugiemQueryKeyTransactionId = @"transaction_id";
-static NSString *const kDraugiemQueryKeyTransactionCompleted = @"transaction_completed";
 
 //Other constants
 static NSInteger const kDraugiemKeyLength = 32;

@@ -127,15 +127,4 @@
     }
 }
 
-- (void)testBuyItemWithFailure
-{
-    [Draugiem buyItemWithID:0 completion:^(DRTransaction *transaction, NSError *error) {
-        XCTAssertNil(transaction);
-        XCTAssertNotNil(error);
-    }];
-    
-    NSURL *mockCallbackURL = [NSURL URLWithString: @"dr15019040://purchase"];
-    [Draugiem openURL:mockCallbackURL sourceApplication:@"lv.draugiem.app"];
-}
-
 @end

@@ -8,18 +8,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <SafariServices/SafariServices.h>
 #import "DraugiemSDK.h"
 #import "DRHelper.h"
 #import "DRError.h"
 
-@implementation DraugiemSDK
+@interface DraugiemSDK () <SFSafariViewControllerDelegate>
 {
     id <NSObject> _observer;
     NSString *_pendingAction;
     void (^_pendingActionCompletionHandler)(id object, NSError *error);
     NSURLSession *_session;
+    UIWindow *_draugiemWindow;
 }
+@end
 
+@implementation DraugiemSDK
 
 #pragma mark - PUBLIC METHODS
 #pragma mark Setup
@@ -74,6 +78,13 @@
     
     if (draugiemURL && expectedSourceApplication) {
         
+        if (_draugiemWindow.rootViewController.presentedViewController) {
+            [_draugiemWindow.rootViewController.presentedViewController dismissViewControllerAnimated:YES completion:^{
+                _draugiemWindow.hidden = YES;
+                _draugiemWindow = nil;
+            }];
+        }
+        
         //URL was intended for DraugiemSDK
         [self processCallback:url];
         return YES;
@@ -104,11 +115,6 @@
             NSString *apiKey = queryDict[kDraugiemQueryKeyApiKey];
             object = apiKey.length == kDraugiemKeyLength ? apiKey : nil;
             _apiKey = object;
-            
-        } else if ([action isEqualToString:kDraugiemActionPurchase]) {
-            
-            DRTransaction *transaction = [[DRTransaction alloc] initWithJSONDictionary:queryDict];
-            object = transaction.valid ? transaction : nil;
             
         } else if ((error.domain == kErrorDomainDraugiemSDK && error.code == DRErrorNone) || !error) {
             
@@ -156,20 +162,28 @@
     _apiKey = nil;
 }
 
-- (void)buyItemWithID:(DRId)itemId completion:(void (^)(DRTransaction *transaction, NSError *error))completionHandler
-{
-    if (_apiKey.length != kDraugiemKeyLength) {
-        //nobody is logged in
-        completionHandler(nil, [DRError errorWithCode:DRErrorInvalidApiKey]);
-    } else {
-        [self performAction:kDraugiemActionPurchase
-                 parameters:@{kDraugiemQueryKeyPurchaseId:@(itemId)}
-                 completion:completionHandler];
-    }
-    
-}
-
 #pragma mark Direct API calls
+
+- (void)restoreApiKey:(NSString *)apiKey completion:(void (^)(BOOL success, NSError *error))completionHandler
+{
+    _apiKey = apiKey;
+    
+    [self callAPIMethod:kDraugiemMethodGetClient parameters:nil completion:^(NSDictionary *responseJSON, NSError *error) {
+        
+        BOOL apiKeyValid = NO;
+
+        if (responseJSON) {
+            DRUser *user = [[DRUser alloc] initWithJSONDictionary:responseJSON[kDraugiemMethodGetClient]];
+            apiKeyValid = user.valid;
+        }
+        
+        _apiKey = apiKeyValid ? apiKey : nil;
+    
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            completionHandler(apiKeyValid, error);
+        }];
+    }];
+}
 
 - (void)clientWithCompletion:(void (^)(DRUser *client, NSError *error))completionHandler
 {
@@ -188,9 +202,9 @@
 
 #pragma mark - PRIVATE METHODS
 
-#pragma mark External actions
-
-- (void)performAction: (NSString *) action parameters: (NSDictionary *) parameters completion:(void (^)(id object, NSError *error))completionHandler
+- (void)performAction:(NSString *)action
+           parameters:(NSDictionary *)parameters
+           completion:(void (^)(id object, NSError *error))completionHandler
 {
     _pendingAction = action;
     _pendingActionCompletionHandler = completionHandler;
@@ -209,34 +223,51 @@
     
     if (errorCode == DRErrorNone) {
         
-        NSString *urlString = [NSString stringWithFormat:@"%@%@/?app=%lld&hash=%@&native=ios", [DRHelper apiURL], _pendingAction, [self appID], [DRHelper apiHash]];
-        NSString *additionalParameters = [DRHelper queryStringFromDictionary:parameters];
-        urlString = [urlString stringByAppendingString: additionalParameters];
-        NSURL *url = [NSURL URLWithString:urlString];
-        
-        if ([[UIApplication sharedApplication] canOpenURL:url]) {
-            
-            _observer = [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationDidBecomeActiveNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^ (NSNotification *notification) {
-                [self applicationDidBecomeActive:notification];
-            }];
-            
-            if (Draugiem.logRequests) NSLog(@"Draugiem action request: %@",url.absoluteString);
-            
-            [[UIApplication sharedApplication] openURL:url];
-            //No errors encountered. openURL and return from function.
-            //Response should be handled in [[DraugiemSDK sharedInstance] openURL:sourceApplication:]
-            return;
+        if ([SFSafariViewController class]) {
+            [self performModalAction:action parameters:parameters completion:completionHandler];
         } else {
-            //Even if native Draugiem app is not installed, Safari should be installed.
-            //Should never end up here.
-            errorCode = DRErrorUnknown;
+            [self performExternalAction:action parameters:parameters completion:completionHandler];
         }
+        
+    } else {
+        _pendingActionCompletionHandler(nil, [DRError errorWithCode:errorCode]);
+        _pendingActionCompletionHandler = NULL;
+        _pendingAction = nil;
     }
+}
+
+#pragma mark External app actions
+
+- (void)performExternalAction:(NSString *)action
+                   parameters:(NSDictionary *)parameters
+                   completion:(void (^)(id object, NSError *error))completionHandler
+{
+    NSString *urlString = [NSString stringWithFormat:@"%@%@/?app=%lld&hash=%@&native=ios", [DRHelper apiURL], _pendingAction, [self appID], [DRHelper apiHash]];
+    NSString *additionalParameters = [DRHelper queryStringFromDictionary:parameters];
+    urlString = [urlString stringByAppendingString: additionalParameters];
+    NSURL *url = [NSURL URLWithString:urlString];
     
-    //Error has been encountered along the way.
-    _pendingActionCompletionHandler(nil, [DRError errorWithCode:errorCode]);
-    _pendingActionCompletionHandler = NULL;
-    _pendingAction = nil;
+    if ([[UIApplication sharedApplication] canOpenURL:url]) {
+        
+        _observer = [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationDidBecomeActiveNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^ (NSNotification *notification) {
+            [self applicationDidBecomeActive:notification];
+        }];
+        
+        if (Draugiem.logRequests) NSLog(@"Draugiem action request: %@",url.absoluteString);
+        
+        [[UIApplication sharedApplication] openURL:url];
+        //No errors encountered. openURL and return from function.
+        //Response should be handled in [[DraugiemSDK sharedInstance] openURL:sourceApplication:]
+        return;
+    } else {
+        //Even if native Draugiem app is not installed, Safari should be installed.
+        //Should never end up here.
+        
+        //Error has been encountered along the way.
+        _pendingActionCompletionHandler(nil, [DRError errorWithCode:DRErrorUnknown]);
+        _pendingActionCompletionHandler = NULL;
+        _pendingAction = nil;
+    }
 }
 
 - (void)applicationDidBecomeActive:(NSNotification *)notification
@@ -249,11 +280,51 @@
         _observer = nil;
     }
     
+    [self sendInterruptErrorToActionCompletionHandler];
+}
+
+- (void)sendInterruptErrorToActionCompletionHandler
+{
     if (_pendingActionCompletionHandler) {
         _pendingActionCompletionHandler(nil, [DRError errorWithCode:DRErrorInterrupt]);
         _pendingActionCompletionHandler = NULL;
     }
     _pendingAction = nil;
+}
+
+#pragma mark Modal view actions
+
+- (void)performModalAction:(NSString *)action
+                parameters:(NSDictionary *)parameters
+                completion:(void (^)(id object, NSError *error))completionHandler
+{
+    NSString *urlString = [NSString stringWithFormat:@"%@%@/?app=%lld&hash=%@&native=ios", kDraugiemWebApiURL, _pendingAction, [self appID], [DRHelper apiHash]];
+    NSString *additionalParameters = [DRHelper queryStringFromDictionary:parameters];
+    urlString = [urlString stringByAppendingString: additionalParameters];
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    SFSafariViewController *safariViewController = [[SFSafariViewController alloc] initWithURL:url];
+    safariViewController.delegate = self;
+    
+    if (!_draugiemWindow) {
+        _draugiemWindow = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        _draugiemWindow.rootViewController = [UIViewController new];
+        _draugiemWindow.rootViewController.view.backgroundColor = [UIColor clearColor];
+    }
+    
+    [_draugiemWindow makeKeyAndVisible];
+    [_draugiemWindow.rootViewController performSelector:@selector(presentModalViewController:animated:) withObject:safariViewController afterDelay:0.0f];
+    
+    return;
+}
+
+- (void)safariViewControllerDidFinish:(SFSafariViewController *)controller
+{
+    //Modal action was cancelled / interrupted, since this method was called
+    //in stead of [[DraugiemSDK sharedInstance] openURL:sourceApplication:]
+    
+    _draugiemWindow = nil;
+    [self sendInterruptErrorToActionCompletionHandler];
 }
 
 #pragma mark Direct API calls
@@ -265,7 +336,9 @@
     if ([NSJSONSerialization isValidJSONObject:JSONDictionary]) {
         data = [NSJSONSerialization dataWithJSONObject:JSONDictionary options:0 error:error];
     } else {
-        *error = [DRError errorWithCode:DRErrorInvalidRequest];
+        if (*error != nil) {
+            *error = [DRError errorWithCode:DRErrorInvalidRequest];
+        }
     }
     
     if (!data) {
@@ -311,8 +384,11 @@
         error = [DRError errorWithCode:DRErrorInvalidApiKey];
     }
     
-    if (error) {
-        completionHandler(nil, error);
+    if (error || !method) {
+        if (completionHandler) {
+            completionHandler(nil, error);
+        }
+        return;
     } else {
         [self performAPIRequestWithJSON:@{@"method": @{method: parameters ? parameters : @{}},
                                           @"auth": @{@"app":_appKey, @"apikey": _apiKey}}
@@ -355,7 +431,6 @@
                                       
                                       completionHandler(JSONDictionary, error);
                                   }];
-    
     [task resume];
 }
 

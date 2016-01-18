@@ -24,6 +24,12 @@
                       appKey:kDraugiemExampleAppKey];
     
     /*
+     Call [Draugiem restoreApiKey:completion:] here, if you have API key saved from previous login.
+     For illustration purposes this method is demonstrated on button press.
+     See - (IBAction)restoreApiKeyButtonTapped:(UIButton *)sender in DRViewController
+     */
+    
+    /*
      Log requests sent and reveiced by Draugiem SDK in example app for illustration purposes.
      */
     Draugiem.logRequests = YES;
