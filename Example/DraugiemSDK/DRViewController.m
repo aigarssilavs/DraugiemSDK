@@ -87,7 +87,6 @@
     /*
      After a successful login you should save the API key in local storage or in the cloud (whatever matches your needs) and restore it, when needed (typically on app startup), in stead of forcing the user to log in again.
      */
-    
     NSString *apiKey = [self savedApiKey];
     
     [Draugiem restoreApiKey:apiKey completion:^(BOOL success, NSError *error) {
@@ -112,7 +111,7 @@
      
      Both appID and appKey must be set in order for Draugiem SDK login to work.
      Both appKey and apiKey must be set for everything, except for login and logout to work.
-     apiKey is set automatically on successfull login.
+     apiKey is set automatically on successfull login. It may also be set using [Draugiem restoreApiKey: completion:] method.
      */
     self.textView.text = [NSString stringWithFormat:@"appID: %lld\nappKey: %@\napiKey: %@",
                           Draugiem.appID,
@@ -129,34 +128,28 @@
  1) Save it using keychain
  2) Save it using your web service.
  
- We provide an example of saving, deleting and restoring it using keychain.
- 
+ We provide an example of saving, deleting and restoring it using apple keychain. In this example we use a keychain wrapper provided by apple. https://developer.apple.com/library/ios/samplecode/GenericKeychain
  */
 
 - (void)saveApiKey:(NSString *)apiKey
 {
     if (apiKey) {
-        KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:KEYCHAIN_API_KEY_IDENTIFIER accessGroup:nil];
-        [keychain setObject:apiKey forKey:(__bridge id)(kSecAttrAccount)];
+        KeychainItemWrapper *keychainItem = [[KeychainItemWrapper alloc] initWithIdentifier:KEYCHAIN_API_KEY_IDENTIFIER accessGroup:nil];
+        [keychainItem setObject:apiKey forKey:(__bridge id)(kSecAttrAccount)];
     }
 }
 
 - (void)deleteApiKey
 {
-    KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:KEYCHAIN_API_KEY_IDENTIFIER accessGroup:nil];
-    [keychain resetKeychainItem];
+    KeychainItemWrapper *keychainItem = [[KeychainItemWrapper alloc] initWithIdentifier:KEYCHAIN_API_KEY_IDENTIFIER accessGroup:nil];
+    [keychainItem resetKeychainItem];
 }
 
 - (NSString *)savedApiKey
 {
-    KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:KEYCHAIN_API_KEY_IDENTIFIER accessGroup:nil];
-    NSString *apiKey = [keychain objectForKey:(__bridge id)(kSecAttrAccount)];
-    
-    if (apiKey.length > 0) {
-        return apiKey;
-    } else {
-        return nil;
-    }
+    KeychainItemWrapper *keychainItem = [[KeychainItemWrapper alloc] initWithIdentifier:KEYCHAIN_API_KEY_IDENTIFIER accessGroup:nil];
+    NSString *apiKey = [keychainItem objectForKey:(__bridge id)(kSecAttrAccount)];
+    return apiKey.length > 0 ? apiKey : nil;
 }
 
 @end

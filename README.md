@@ -22,7 +22,11 @@ Take note of your application ID (15019040 in the example) and application API k
 
 ### 1. Add DraugiemSDK to your Xcode project. 
 
-If you are using git for version control in your app, you may add this repo as a submodule to yours to make it easier to get future updates. You may also download this repo and add the SDK files to your project manually. Installation using cocoapods is not supported at this time.
+If you are using git for version control in your app, you may add this repo as a submodule to yours to make it easier to get future updates. You may also download this repo and add the SDK files to your project manually. DraugiemSDK is also available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
+
+```ruby
+pod "DraugiemSDK"
+```
 
 ### 2. Configure your Xcode Project
 
@@ -94,12 +98,12 @@ You should manage the apiKey, returned by the login method yourself. Save it as 
     if (success) {
         //Restoration of apiKey was successful.
     } else {
-        //Restoration of apiKey was unccessful. Refer to error for details.
+        //Restoration of apiKey was unccessful. Refer to the error object for details.
     }
 }];
 ```
 
-The restoration of previously stored apiKey has to be done, so that the client woudldn't have to log in each time the app restarts.
+The restoration of previously stored apiKey has to be done, so that the client wouldn't have to log in each time the app restarts. The example project shows how the apiKey could be saved using keychain. You may also store the key using your own web service.
 
 Appendix
 ===============

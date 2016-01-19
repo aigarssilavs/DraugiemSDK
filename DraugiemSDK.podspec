@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.name             = "DraugiemSDK"
   s.version          = "0.1.0"
   s.summary          = "Official Draugiem SDK for iOS."
-  s.description      = "The Draugiem SDK for iOS enables you to use Draugiem platform features, such as Draugiem authentication and payments."
+  s.description      = "The Draugiem SDK for iOS enables you to use Draugiem authentication."
   s.homepage         = "https://github.com/aigarssilavs/DraugiemSDK"
   s.license          = 'WTFPL'
   s.author           = { "Aigars Silavs" => "aigars.silavs@gmail.com" }
